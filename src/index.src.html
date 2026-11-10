@@ -1,0 +1,1581 @@
+<meta charset="utf-8">
+<title>Elsie's Story Digital Brand Book</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="The Elsie's Story Digital Brand Book: story, logo, colour, type, illustration, photography, voice, scrapbook materials, motion and the brand in use.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300..700;1,300..700&display=swap">
+<style>
+/*@FONTS@*/
+
+/* Layout: a spiral-bound scrapbook. A fixed binding and bar on top, then either the home
+   page (logo written on, polaroids dropped in), the Brand grid of lit tiles, or one
+   brand page laid out as a two-column notebook spread. Single theme by choice: it's paper. */
+:root {
+  --paper: #ffffff;
+  --paper-warm: #f2f1eb;
+  --paper-grey: #f2f1eb;
+  --white: #ffffff;
+  --cocoa: #574a48;
+  --cocoa-deep: #3f3534;
+  --ink: #796867;
+  --ink-deep: #574a48;
+  --rose: #ac2d4b;
+  --blush: #efbcc8;
+  --pale-blush: #e6bcc6;
+  --oat: #e6d5c0;
+  --lilac: #e8d8e3;
+  --clay: #d4a395;
+  --taupe: #d6cac1;
+  --notebook: rgba(120, 170, 210, 0.42);
+  --wire: #3a3f47;
+  --wire-shine: #8e99a6;
+  --shade: rgba(55, 42, 38, 0.1);
+  --shade-2: rgba(55, 42, 38, 0.16);
+  --rule: rgba(121, 104, 103, 0.22);
+
+  --hand: "Paperink", "Segoe Print", "Bradley Hand", cursive;
+  --marker: "Lazy Dog", "Comic Sans MS", "Chalkboard SE", cursive;
+  --sans: "Jost", Arial, Verdana, sans-serif;
+
+  --shadow-photo: 3px 3px 5px rgba(0, 0, 0, 0.1);
+  --shadow-paper: 0 1px 1px rgba(55, 42, 38, .1), 1px 3px 3px rgba(55, 42, 38, .12), 3px 7px 10px rgba(55, 42, 38, .1);
+  --shadow-lift: 0 5px 18px rgba(55, 42, 38, .16);
+
+  --edge: 32px;
+  --top: 100px;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html { scroll-padding-top: calc(var(--top) + 16px); -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; color: var(--ink); font-family: var(--sans); font-size: 18px; line-height: 1.5;
+  background: var(--paper) url("assets/img/paper-texture.webp") center / cover fixed;
+  -webkit-font-smoothing: antialiased;
+}
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 30; background: var(--cocoa); }
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+::selection { background: var(--blush); color: var(--ink-deep); }
+:focus-visible { outline: 3px solid var(--rose); outline-offset: 3px; }
+h1, h2, h3 { text-wrap: balance; }
+.wrapx { padding-left: max(var(--edge), env(safe-area-inset-left, 0px)); padding-right: max(var(--edge), env(safe-area-inset-right, 0px)); }
+@media (max-width: 720px) { :root { --edge: 16px; --top: 92px; } }
+
+/* ── Binding + top bar ─────────────────────────────── */
+.top { position: fixed; top: env(safe-area-inset-top, 0px); left: 0; right: 0; z-index: 20; }
+.spiral { height: 34px; display: flex; justify-content: space-between; padding: 0 max(18px, env(safe-area-inset-right, 0px)) 0 max(18px, env(safe-area-inset-left, 0px)); background: linear-gradient(var(--cocoa) 14px, transparent 14px); overflow: hidden; }
+.spiral i { position: relative; width: 6px; height: 28px; border-radius: 3px; background: linear-gradient(90deg, var(--wire), var(--wire-shine) 45%, var(--wire)); }
+.spiral i::after { content: ""; position: absolute; left: 50%; bottom: -3px; width: 12px; height: 12px; border-radius: 50%; transform: translateX(-50%); background: var(--wire); }
+.bar { height: calc(var(--top) - 34px); display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 12px; background: linear-gradient(var(--paper) 60%, rgba(255, 255, 255, 0)); }
+.bar .home { justify-self: start; display: block; }
+.bar .home { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+.bar .home img { height: 46px; width: auto; }
+.bar .home .bb { padding-left: 14px; border-left: 1px dashed var(--rule); font: 400 15px/1.1 var(--marker); letter-spacing: .05em; text-transform: uppercase; color: var(--rose); white-space: nowrap; }
+.seg { display: flex; gap: 2px; padding: 3px; background: var(--paper-grey); box-shadow: inset 0 0 0 1px var(--rule); }
+.seg a { padding: 7px 18px; font-size: 15px; line-height: 20px; text-decoration: none; color: var(--ink); transition: background-color .2s, color .2s; }
+.seg a:hover { color: var(--ink-deep); background: var(--white); }
+.seg a[aria-current="page"] { background: var(--cocoa); color: var(--white); }
+.bar .site { justify-self: end; font-size: 15px; text-decoration: none; padding: 8px 4px; }
+.bar .site:hover { color: var(--ink-deep); text-decoration: underline; text-underline-offset: 5px; }
+@media (max-width: 720px) { .bar .home img { height: 36px; } .bar .home .bb { display: none; } .bar .site { display: none; } .bar { grid-template-columns: auto 1fr; } .seg { justify-self: end; } .seg a { padding: 7px 12px; } }
+
+main { min-height: 70vh; padding-top: var(--top); }
+[data-view] { animation: pageIn .5s ease both; }
+@keyframes pageIn { from { opacity: .001; transform: translateY(8px); } }
+
+/* ── Shared bits ───────────────────────────────────── */
+.hand { font-family: var(--hand); font-weight: 400; }
+.marker { font-family: var(--marker); font-weight: 400; }
+.kicker { font-family: var(--marker); font-size: 17px; letter-spacing: .04em; text-transform: uppercase; color: var(--rose); }
+.btn { position: relative; display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 60px; min-width: 220px; padding: 0 34px; font: 600 22px/1 var(--sans); color: var(--ink); text-decoration: none; border: 0; cursor: pointer; background: url("assets/img/sketch-frame.png") center / 100% 100% no-repeat; transition: transform .2s ease; }
+.btn:hover { transform: rotate(-2deg); color: var(--ink-deep); }
+.btn--sm { min-height: 46px; min-width: 150px; font-size: 17px; padding: 0 22px; }
+.tl { text-decoration: underline; text-underline-offset: 6px; text-decoration-thickness: 1px; }
+.tl:hover { text-decoration-thickness: 2px; color: var(--rose); }
+.roid { display: block; background: var(--white); padding: 12px 12px 0; box-shadow: var(--shadow-photo); transform: rotate(var(--r, 0deg)); transition: transform .35s ease, box-shadow .35s ease; color: var(--ink); text-decoration: none; }
+.roid .im { display: block; position: relative; aspect-ratio: 1 / 1; overflow: hidden; background: var(--paper-grey); }
+.roid .im img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.roid .pen { display: block; padding: 10px 4px 12px; font: 400 26px/1.1 var(--hand); text-align: center; min-height: 52px; }
+.photo { display: block; box-shadow: var(--shadow-photo); transform: rotate(var(--r, 0deg)); background: var(--paper-grey); }
+.photo img { width: 100%; height: 100%; object-fit: cover; }
+.note { --line: 30px; position: relative; padding: 34px 9% 30px; background: var(--white) linear-gradient(to bottom, transparent calc(100% - 1px), var(--notebook) calc(100% - 1px)) 0 10px / 100% var(--line); box-shadow: var(--shadow-paper); transform: rotate(var(--r, 0deg)); }
+.note p { margin: 0 0 var(--line); line-height: var(--line); }
+.note p:last-child { margin-bottom: 0; }
+.sticker { display: inline-grid; place-items: center; width: var(--s, 116px); aspect-ratio: 1; border-radius: 50%; background: var(--blush); color: var(--ink-deep); font: 400 17px/1 var(--marker); letter-spacing: .04em; text-transform: uppercase; text-align: center; position: relative; box-shadow: 3px 3px 10px rgba(0, 0, 0, .2); transform: rotate(var(--r, 0deg)); }
+.sticker::before { content: ""; position: absolute; inset: 7px; border-radius: 50%; border: 2px dashed currentColor; opacity: .4; }
+.sticker span { max-width: 74%; }
+.tape { position: absolute; width: 92px; height: 26px; background: rgba(239, 188, 200, .7); transform: rotate(var(--r, -6deg)); box-shadow: 0 1px 2px var(--shade); }
+
+/* ── Home ──────────────────────────────────────────── */
+.stage { position: relative; display: grid; place-items: center; min-height: calc(100svh - var(--top) - 40px); padding-block: 40px 80px; overflow: hidden; }
+.stage .centre { position: relative; z-index: 2; display: grid; justify-items: center; gap: 18px; text-align: center; }
+.write { position: relative; margin: 0; font: 400 clamp(76px, 13vw, 190px)/0.9 var(--hand); color: var(--ink-deep); clip-path: inset(0 100% 0 0); animation: write 2.2s .5s cubic-bezier(.5, .1, .3, 1) forwards; }
+@keyframes write { to { clip-path: inset(0 -10% 0 0); } }
+.write .fly { position: absolute; width: clamp(64px, 9vw, 120px); left: -6%; top: -30%; opacity: 0; animation: flyin 2.6s .2s ease-out forwards; }
+.home-fly { position: absolute; z-index: 3; width: clamp(56px, 7vw, 104px); left: -4%; top: -14%; animation: flyin 2.8s .1s ease-out both, flap .5s 3s ease-in-out 3 alternate; transform-origin: center; }
+@keyframes flyin { 0% { opacity: 0; transform: translate(-40vw, 30vh) rotate(-30deg) scale(.6); } 60% { opacity: 1; } 100% { opacity: 1; transform: none; } }
+@keyframes flap { to { transform: scaleX(.75) rotate(-6deg); } }
+.vh { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.logo-anim { position: relative; width: clamp(300px, 58vw, 860px); aspect-ratio: 1000 / 397; perspective: 900px; cursor: pointer; margin-bottom: 4px; }
+.logo-anim > .logo-static { position: absolute; inset: 0; width: 100%; height: 100%; }
+.logo-anim.js > .logo-static { opacity: 0; }
+.logo-anim canvas { display: block; }
+.logo-anim .word { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 2; }
+.logo-anim .fly { position: absolute; z-index: 1; transform-style: preserve-3d; will-change: transform; }
+.logo-anim .fly .flap { width: 100%; height: 100%; transform-style: preserve-3d; }
+.logo-anim .fly canvas { width: 100%; height: 100%; }
+.logo-anim .letter { position: absolute; z-index: 2; will-change: transform; }
+.logo-anim .letter canvas { width: 100%; height: 100%; }
+.logo-anim .nib { position: absolute; z-index: 4; left: 0; top: 50%; width: 11px; height: 11px; margin: -5.5px 0 0 -5.5px; border-radius: 50%; background: var(--ink-deep); box-shadow: 0 0 0 5px rgba(239, 188, 200, .55), 0 0 18px 6px rgba(239, 188, 200, .45); opacity: 0; pointer-events: none; transition: opacity .12s, transform .12s; }
+.logo-anim .nib.up { opacity: .35; transform: scale(.55); }
+.logo-anim .puff { position: absolute; z-index: 4; width: 10px; height: 10px; background: var(--blush); transform: rotate(45deg); pointer-events: none; }
+.logo-anim .puff::before, .logo-anim .puff::after { content: ""; position: absolute; width: 10px; height: 10px; border-radius: 50%; background: inherit; }
+.logo-anim .puff::before { left: -5px; } .logo-anim .puff::after { top: -5px; }
+.stage .again { font: 500 14px/1 var(--sans); color: var(--ink); background: none; border: 0; padding: 8px 4px; cursor: pointer; opacity: 0; animation: fade .8s 5.6s forwards; }
+.stage .again:hover { color: var(--rose); text-decoration: underline; text-underline-offset: 4px; }
+/* While the logo is being written the rest of the welcome page waits, then follows on */
+.stage.js-intro:not(.revealed) .bbk, .stage.js-intro:not(.revealed) .sub, .stage.js-intro:not(.revealed) .btn,
+.stage.js-intro:not(.revealed) .again, .stage.js-intro:not(.revealed) .scatter { animation: none; opacity: 0; }
+.stage.revealed .bbk { animation-delay: .1s; } .stage.revealed .sub { animation-delay: .35s; }
+.stage.revealed .btn { animation-delay: .6s; } .stage.revealed .again { animation-delay: 1.3s; }
+.stage.revealed .scatter.s1 { animation-delay: .5s; } .stage.revealed .scatter.s2 { animation-delay: .65s; }
+.stage.revealed .scatter.s3 { animation-delay: .8s; } .stage.revealed .scatter.s4 { animation-delay: .95s; }
+.stage .bbk { margin: 6px 0 0; font: 400 clamp(20px, 2.2vw, 28px)/1 var(--marker); letter-spacing: .08em; text-transform: uppercase; color: var(--rose); opacity: 0; animation: fade .8s 4.3s forwards; }
+.stage .sub { margin: 0; font-size: clamp(18px, 1.8vw, 22px); max-width: 34ch; opacity: 0; animation: fade .8s 4.6s forwards; }
+.stage .sub b { font-weight: 600; }
+.stage .btn { opacity: 0; animation: fade .8s 4.9s forwards; font: 400 26px/1 var(--marker); letter-spacing: .04em; color: var(--ink-deep); padding: 4px 40px 0; min-height: 66px; }
+@keyframes fade { to { opacity: 1; } }
+.scatter { position: absolute; z-index: 1; text-decoration: none; width: clamp(130px, 15vw, 220px); animation: drop .9s cubic-bezier(.2, .8, .3, 1.2) both; }
+.scatter.s1 { left: 3%; top: 6%; --r: -6deg; animation-delay: 5s; }
+.scatter.s2 { right: 4%; top: 4%; --r: 5deg; animation-delay: 5.15s; }
+.scatter.s3 { left: 6%; bottom: 4%; --r: 4deg; animation-delay: 5.3s; }
+.scatter.s4 { right: 7%; bottom: 3%; --r: -4deg; animation-delay: 5.45s; }
+.scatter .roid .pen { font-size: 20px; min-height: 40px; padding: 6px 0 8px; }
+@keyframes drop { from { opacity: 0; transform: translateY(-60px) rotate(20deg); } }
+.doodle { position: absolute; z-index: 1; pointer-events: none; }
+.hearts { position: absolute; inset: auto 0 0; height: 100%; pointer-events: none; z-index: 0; }
+.hearts span { position: absolute; bottom: -20px; width: 14px; height: 14px; background: var(--blush); transform: rotate(45deg); opacity: 0; animation: rise var(--d, 6s) var(--dl, 0s) ease-in infinite; }
+.hearts span::before, .hearts span::after { content: ""; position: absolute; width: 14px; height: 14px; border-radius: 50%; background: inherit; }
+.hearts span::before { left: -7px; } .hearts span::after { top: -7px; }
+@keyframes rise { 0% { opacity: 0; transform: translate(0, 0) rotate(45deg); } 15% { opacity: .9; } 100% { opacity: 0; transform: translate(var(--x, 20px), -70vh) rotate(45deg); } }
+@media (max-width: 720px) { .scatter { width: 110px; } .scatter.s3, .scatter.s4 { display: none; } .scatter.s1 { top: 0; left: -10px; } .scatter.s2 { top: 0; right: -10px; } .stage { padding-top: 170px; } .home-fly { left: -2%; top: -30%; } }
+
+/* ── Brand grid (lit tiles) ────────────────────────── */
+.tiles-head { display: flex; align-items: end; justify-content: space-between; gap: 24px; flex-wrap: wrap; max-width: 1440px; margin: 0 auto; padding-block: 28px 22px; }
+.tiles-head h1 { margin: 0; font: 400 clamp(54px, 8vw, 104px)/.9 var(--hand); color: var(--ink-deep); }
+.tiles-head p { margin: 0; max-width: 44ch; }
+.tiles { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; max-width: 1440px; margin: 0 auto; padding-bottom: 20px; }
+@media (min-width: 1180px) { .tiles { grid-template-columns: repeat(3, minmax(0, 1fr)); } .tiles .tile--wide { grid-column: span 2; aspect-ratio: auto; } }
+@media (max-width: 720px) { .tiles { grid-template-columns: 1fr; } }
+.tile { position: relative; overflow: hidden; display: block; aspect-ratio: 1 / .92; background: var(--paper-warm); color: var(--ink); text-decoration: none; box-shadow: inset 0 0 0 1px var(--rule); transition: background-color .45s, color .45s, box-shadow .45s; }
+.tile h2 { position: relative; z-index: 2; margin: 0; padding: 22px 26px; font: 400 clamp(34px, 3.4vw, 48px)/1 var(--hand); }
+.tile .go { position: absolute; z-index: 2; top: 30px; right: 26px; font-size: 15px; opacity: 0; transform: translateX(-6px); transition: opacity .3s, transform .3s; }
+.tile .art { position: absolute; inset: 0; z-index: 1; filter: grayscale(1) sepia(.2); opacity: .38; transition: filter .5s, opacity .5s; }
+.tile .art > * { position: absolute; transition: transform .6s cubic-bezier(.3, 1.4, .5, 1); }
+.tile.is-lit { background: var(--bg); color: var(--fg, var(--ink-deep)); box-shadow: none; }
+.tile.is-lit .art { filter: none; opacity: 1; }
+.tile.is-lit .go { opacity: 1; transform: none; }
+.tile.is-lit .art .wig { transform: rotate(var(--lr, 0deg)) translateY(var(--ly, 0)); }
+.t-story   { --bg: var(--blush); }
+.t-logo    { --bg: var(--paper-grey); }
+.t-colour  { --bg: var(--oat); }
+.t-type    { --bg: var(--taupe); }
+.t-illus   { --bg: var(--lilac); }
+.t-photo   { --bg: var(--cocoa); --fg: var(--white); }
+.t-voice   { --bg: var(--paper-grey); }
+.t-scrap   { --bg: var(--oat); }
+.t-motion  { --bg: var(--rose); --fg: var(--white); }
+.t-use     { --bg: var(--taupe); }
+
+/* ── Doc pages ─────────────────────────────────────── */
+.doc { max-width: 1440px; margin: 0 auto; padding-bottom: 40px; }
+.crumbs { padding-block: 18px 0; font-size: 15px; }
+.crumbs a { text-decoration: none; } .crumbs a:hover { text-decoration: underline; }
+.opener { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 40px; align-items: end; padding-block: 18px 34px; }
+.opener h1 { margin: 0; font: 400 clamp(64px, 9vw, 132px)/.85 var(--hand); color: var(--ink-deep); }
+.opener .lead { margin: 0; font-size: clamp(20px, 1.8vw, 24px); line-height: 1.45; max-width: 40ch; }
+@media (max-width: 860px) { .opener { grid-template-columns: 1fr; gap: 18px; } }
+.section { padding-block: 70px; border-top: 1px dashed var(--rule); }
+.head { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 40px; margin-bottom: 40px; }
+.head h2 { margin: 0; font: 400 clamp(40px, 4.6vw, 64px)/.95 var(--hand); color: var(--ink-deep); }
+.head h2 small { display: block; margin-bottom: 10px; font: 400 16px/1 var(--marker); letter-spacing: .05em; text-transform: uppercase; color: var(--rose); }
+.head .text { max-width: 62ch; min-width: 0; }
+.head .text p { margin: 0 0 14px; }
+@media (max-width: 860px) { .head { grid-template-columns: 1fr; gap: 14px; } }
+.hint { font-size: 15px; margin: 18px 0 0; }
+
+/* hero collage on doc pages */
+.collage { position: relative; height: clamp(320px, 38vw, 520px); margin-block: 10px 30px; }
+.collage > * { position: absolute; }
+
+/* do / don't */
+.dd { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 26px; }
+.dd figure { margin: 0; }
+.dd figcaption { margin-top: 14px; font-size: 16px; }
+.dd figcaption b { display: block; font: 400 26px/1 var(--hand); margin-bottom: 4px; }
+.yes b { color: var(--ink-deep); } .no b { color: var(--rose); }
+.xmark { position: absolute; inset: 0; pointer-events: none; }
+.xmark path { fill: none; stroke: var(--rose); stroke-width: 6; stroke-linecap: round; opacity: .85; }
+
+/* ── Story ─────────────────────────────────────────── */
+.pillars { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 30px; }
+@media (max-width: 900px) { .pillars { grid-template-columns: 1fr; } }
+.pillar { padding: 30px 28px 32px; background: var(--white); box-shadow: var(--shadow-paper); transform: rotate(var(--r)); }
+.pillar .word { font: 400 72px/1 var(--hand); color: var(--ink-deep); }
+.pillar .word em { font-style: normal; color: var(--rose); }
+.pillar p { margin: 12px 0 0; }
+.pillar .see { margin-top: 18px; padding-top: 14px; border-top: 1px dashed var(--rule); font-size: 15px; }
+.pillar .see b { font-family: var(--marker); font-weight: 400; letter-spacing: .04em; text-transform: uppercase; font-size: 14px; color: var(--rose); display: block; margin-bottom: 4px; }
+.manifesto { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 60px; align-items: center; }
+@media (max-width: 900px) { .manifesto { grid-template-columns: 1fr; } }
+.manifesto .note { font-size: 19px; }
+.manifesto .sign { font: 400 40px/1 var(--hand); color: var(--ink-deep); }
+.big-quote { margin: 0; font: 400 clamp(40px, 5vw, 76px)/1 var(--hand); color: var(--ink-deep); }
+.big-quote span { color: var(--rose); }
+.pathways { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 34px; }
+@media (max-width: 900px) { .pathways { grid-template-columns: 1fr; max-width: 360px; } }
+.pathways .card { background: var(--white); padding: 18px 20px 20px; box-shadow: 1px 2px 2px var(--shade), 3px 5px 8px rgba(55, 42, 38, .08); text-align: center; margin-bottom: 16px; }
+.pathways .card h3 { margin: 0 0 4px; font: 600 22px/1.3 var(--sans); }
+.pathways .card p { margin: 0; font-size: 16px; }
+
+/* ── Logo ──────────────────────────────────────────── */
+.parts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+@media (max-width: 960px) { .parts { grid-template-columns: 1fr; } }
+.part .plate { display: grid; place-items: center; aspect-ratio: 4 / 3; background: var(--white); box-shadow: inset 0 0 0 1px var(--rule); transition: background-color .3s; }
+.part .plate.dark { background: var(--cocoa); box-shadow: none; }
+.part .plate img { width: var(--w, 70%); height: auto; }
+.part .info { padding: 16px 2px; }
+.part h3 { margin: 4px 0 6px; font: 400 32px/1 var(--hand); color: var(--ink-deep); }
+.part p { margin: 0 0 12px; font-size: 16px; }
+.toggle { display: inline-flex; padding: 3px; background: var(--paper-grey); box-shadow: inset 0 0 0 1px var(--rule); }
+.toggle button { font: 500 14px/1 var(--sans); padding: 8px 14px; border: 0; background: transparent; color: var(--ink); cursor: pointer; }
+.toggle button[aria-pressed="true"] { background: var(--cocoa); color: var(--white); }
+.motion-logo { display: grid; grid-template-columns: minmax(0, 8fr) minmax(0, 4fr); gap: 30px; align-items: stretch; }
+@media (max-width: 960px) { .motion-logo { grid-template-columns: 1fr; } }
+.stage-plate { position: relative; display: grid; place-items: center; gap: 18px; padding: 70px 24px 26px; background: var(--white); box-shadow: inset 0 0 0 1px var(--rule); overflow: hidden; }
+.stage-plate .logo-anim { width: min(100%, 720px); }
+.beats { display: grid; align-content: center; }
+.beats div { padding: 16px 0; border-bottom: 1px dashed var(--rule); }
+.beats div:last-child { border-bottom: 0; }
+.beats b { display: block; font: 400 26px/1 var(--hand); color: var(--ink-deep); margin-bottom: 4px; font-variant-numeric: tabular-nums; }
+.beats span { font-size: 16px; }
+.space { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 40px; align-items: center; }
+@media (max-width: 900px) { .space { grid-template-columns: 1fr; } }
+.space .board { display: grid; place-items: center; padding: 50px 20px; background: var(--white); box-shadow: inset 0 0 0 1px var(--rule); }
+.space .box { position: relative; padding: 9%; outline: 2px dashed var(--rose); outline-offset: 0; width: min(100%, 520px); }
+.space .box img { width: 100%; }
+.space .box .x { position: absolute; font: 400 22px/1 var(--hand); color: var(--rose); }
+.space .box .x.t { top: 6px; left: 50%; transform: translateX(-50%); } .space .box .x.l { left: 8px; top: 50%; transform: translateY(-50%); }
+.sizes { display: grid; gap: 18px; }
+.sizes div { display: flex; align-items: center; gap: 18px; padding-bottom: 18px; border-bottom: 1px dashed var(--rule); }
+.sizes div:last-child { border-bottom: 0; }
+.sizes img { flex: none; }
+.sizes b { display: block; font-weight: 600; color: var(--ink-deep); }
+.misuse { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+@media (max-width: 900px) { .misuse { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 520px) { .misuse { grid-template-columns: 1fr; } }
+.misuse figure { margin: 0; }
+.misuse .plate { position: relative; display: grid; place-items: center; aspect-ratio: 4 / 3; background: var(--white); box-shadow: inset 0 0 0 1px var(--rule); overflow: hidden; }
+.misuse .plate img.l { width: 62%; }
+.misuse figcaption { margin-top: 10px; font-size: 16px; }
+.misuse figcaption b { color: var(--rose); font-weight: 600; }
+
+/* ── Colour ────────────────────────────────────────── */
+.chips { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px 18px; }
+@media (max-width: 1000px) { .chips { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.chip { all: unset; box-sizing: border-box; display: flex; flex-direction: column; cursor: pointer; background: var(--white); box-shadow: var(--shadow-paper); transform: rotate(var(--r, 0deg)); transition: transform .3s ease, box-shadow .3s; }
+.chip:hover { transform: rotate(0deg) translateY(-4px); box-shadow: var(--shadow-lift); }
+.chip:focus-visible { outline: 3px solid var(--rose); outline-offset: 4px; }
+.chip .sw { aspect-ratio: 1 / .78; background: var(--c); clip-path: polygon(0 0, 100% 0, 100% 92%, 94% 96%, 86% 92%, 77% 97%, 68% 93%, 58% 98%, 48% 93%, 37% 97%, 27% 92%, 17% 97%, 8% 93%, 0 97%); }
+.chip .sw.edge { box-shadow: inset 0 0 0 1px var(--rule); }
+.chip .meta { padding: 12px 16px 18px; display: grid; gap: 2px; }
+.chip b { font: 400 34px/1 var(--hand); color: var(--ink-deep); }
+.chip .v { font-size: 15px; font-variant-numeric: tabular-nums; }
+.chip .role { margin-top: 8px; font-size: 15px; line-height: 1.4; }
+.chip .tag { justify-self: start; margin-bottom: 6px; padding: 5px 9px; font: 400 13px/1 var(--marker); letter-spacing: .05em; text-transform: uppercase; background: var(--cocoa); color: var(--white); transform: rotate(-2deg); }
+.chips + .sub-head { margin-top: 56px; }
+.sub-head { display: flex; align-items: baseline; justify-content: space-between; gap: 20px; flex-wrap: wrap; margin-bottom: 22px; padding-top: 22px; border-top: 1px dashed var(--rule); }
+.sub-head h3 { margin: 0; font: 400 36px/1 var(--hand); color: var(--ink-deep); }
+.sub-head p { margin: 0; max-width: 56ch; font-size: 16px; }
+.chip .ok { min-height: 20px; font-size: 14px; color: var(--rose); }
+.prop { display: flex; height: 130px; box-shadow: var(--shadow-paper); }
+.prop div { position: relative; display: flex; align-items: end; padding: 12px; font-size: 14px; line-height: 1.2; min-width: 0; }
+.prop div b { display: block; font: 400 30px/1 var(--hand); }
+.pairs { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 18px; }
+.pair { position: relative; padding: 22px 20px 18px; min-height: 170px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: inset 0 0 0 1px var(--rule); }
+.pair .aa { font: 600 26px/1.15 var(--sans); }
+.pair .aa i { display: block; font: 400 38px/1 var(--hand); font-style: normal; }
+.pair .r { display: flex; justify-content: space-between; align-items: center; font-size: 14px; }
+.badge { padding: 4px 9px; font: 600 13px/1 var(--sans); letter-spacing: .02em; background: var(--white); color: var(--ink-deep); }
+.badge.fail { background: var(--rose); color: var(--white); }
+
+/* ── Type ──────────────────────────────────────────── */
+.faces { display: grid; gap: 22px; }
+.face { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); gap: 30px; padding: 34px; background: var(--white); box-shadow: var(--shadow-paper); align-items: center; }
+.face:nth-child(2) { background: var(--oat); box-shadow: none; }
+.face:nth-child(3) { background: var(--cocoa); color: var(--white); box-shadow: none; }
+@media (max-width: 900px) { .face { grid-template-columns: 1fr; padding: 24px; } }
+.face .lbl .k { font: 400 15px/1 var(--marker); letter-spacing: .05em; text-transform: uppercase; color: var(--rose); }
+.face:nth-child(3) .lbl .k { color: var(--blush); }
+.face .lbl h3 { margin: 8px 0 6px; font: 600 28px/1.1 var(--sans); }
+.face .lbl p { margin: 0; font-size: 16px; }
+.face .spec { min-width: 0; overflow-wrap: anywhere; }
+.spec-hand { font: 400 clamp(72px, 9vw, 140px)/.9 var(--hand); color: var(--ink-deep); }
+.spec-marker { font: 400 clamp(56px, 7vw, 104px)/.95 var(--marker); color: var(--ink-deep); }
+.spec-sans { font: 500 clamp(44px, 5.4vw, 80px)/1 var(--sans); letter-spacing: -.01em; }
+.alpha { margin-top: 12px; font-size: 22px; letter-spacing: .02em; opacity: .9; }
+.face:nth-child(1) .alpha { font-family: var(--hand); font-size: 30px; }
+.face:nth-child(2) .alpha { font-family: var(--marker); }
+.dls { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+.dl { display: inline-flex; align-items: center; gap: 10px; min-height: 44px; padding: 10px 16px; font: 600 15px/1.2 var(--sans); text-decoration: none; background: var(--cocoa); color: var(--white); transition: transform .2s ease, background-color .2s; }
+.dl::before { content: ""; width: 14px; height: 14px; flex: none; background: currentColor; clip-path: polygon(40% 0, 60% 0, 60% 52%, 80% 32%, 94% 46%, 50% 90%, 6% 46%, 20% 32%, 40% 52%); }
+.dl small { font-weight: 400; font-size: 13px; opacity: .85; }
+.dl:hover { transform: rotate(-2deg); background: var(--cocoa-deep); }
+.face:nth-child(3) .dl { background: var(--white); color: var(--ink-deep); }
+.face:nth-child(3) .dl:hover { background: var(--pale-blush); }
+.dl[aria-busy="true"] { opacity: .6; }
+.scale { display: grid; }
+.scale .row { display: grid; grid-template-columns: 170px minmax(0, 1fr) 150px; gap: 20px; align-items: baseline; padding-block: 16px; border-bottom: 1px dashed var(--rule); }
+.scale .row code { font: 500 14px/1.3 var(--sans); color: var(--rose); }
+.scale .row .m { font-size: 14px; text-align: right; font-variant-numeric: tabular-nums; }
+.scale .row .s { min-width: 0; overflow-wrap: anywhere; color: var(--ink-deep); }
+@media (max-width: 760px) { .scale .row { grid-template-columns: 1fr; gap: 4px; } .scale .row .m { text-align: left; } }
+.inuse { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 0; box-shadow: var(--shadow-paper); }
+@media (max-width: 900px) { .inuse { grid-template-columns: 1fr; } }
+.inuse .l { padding: 50px 46px; background: var(--white); display: grid; gap: 16px; justify-items: center; text-align: center; }
+.inuse .l h3 { margin: 0; font: 400 clamp(46px, 5vw, 72px)/.95 var(--hand); color: var(--ink-deep); }
+.inuse .l p { margin: 0; max-width: 40ch; }
+.inuse .r { position: relative; background: var(--paper-grey); padding: 34px; display: grid; gap: 10px; align-content: center; }
+.inuse .r .tag { display: flex; justify-content: space-between; gap: 10px; font-size: 14px; border-bottom: 1px dashed var(--rule); padding-bottom: 8px; }
+.inuse .r .tag span:first-child { font: 400 22px/1 var(--hand); color: var(--ink-deep); }
+
+/* ── Illustration ──────────────────────────────────── */
+.board { position: relative; background: var(--white); box-shadow: var(--shadow-paper); height: clamp(520px, 56vw, 720px); overflow: hidden; }
+.board .it { margin: 0; position: absolute; transform: rotate(var(--r, 0deg)); transition: transform .4s cubic-bezier(.3, 1.6, .5, 1); cursor: default; }
+.board .it:hover { transform: rotate(calc(var(--r, 0deg) * -1)) scale(1.08); }
+.board .it figcaption { position: absolute; left: 50%; bottom: -26px; transform: translateX(-50%); white-space: nowrap; font: 400 20px/1 var(--hand); opacity: 0; transition: opacity .3s; }
+.board .it:hover figcaption, .board .it:focus-within figcaption { opacity: 1; }
+.tiers { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 30px; }
+@media (max-width: 900px) { .tiers { grid-template-columns: 1fr; } }
+.tier .frame { aspect-ratio: 1; background: var(--white); box-shadow: var(--shadow-paper); display: grid; place-items: center; padding: 14px; transform: rotate(var(--r, 0deg)); }
+.tier .frame img { width: 100%; height: 100%; object-fit: contain; }
+.tier h3 { margin: 22px 0 6px; font: 400 32px/1 var(--hand); color: var(--ink-deep); }
+.tier p { margin: 0; font-size: 16px; }
+
+/* ── Photography ───────────────────────────────────── */
+.wall { columns: 4 220px; column-gap: 26px; }
+.wall .roid { break-inside: avoid; margin-bottom: 30px; }
+.wall .roid .im { aspect-ratio: auto; }
+.wall .roid .im img { position: static; height: auto; }
+.principles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 26px; }
+@media (max-width: 900px) { .principles { grid-template-columns: 1fr; } }
+.principle { display: grid; gap: 14px; }
+.principle .photo { aspect-ratio: 4 / 5; }
+.principle h3 { margin: 8px 0 0; font: 400 34px/1 var(--hand); color: var(--ink-deep); }
+.principle p { margin: 0; font-size: 16px; }
+
+/* ── Voice ─────────────────────────────────────────── */
+.vp { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 40px; padding-block: 56px; border-top: 1px dashed var(--rule); }
+@media (max-width: 900px) { .vp { grid-template-columns: 1fr; } }
+.vp h3 { margin: 0; font: 400 clamp(44px, 5vw, 68px)/.95 var(--hand); color: var(--ink-deep); }
+.vp h3 small { display: block; margin-bottom: 10px; font: 400 15px/1 var(--marker); letter-spacing: .05em; text-transform: uppercase; color: var(--rose); }
+.vp .how { margin: 18px 0 0; padding: 0; list-style: none; display: grid; gap: 10px; }
+.vp .how li { padding-left: 26px; position: relative; font-size: 17px; }
+.vp .how li::before { content: ""; position: absolute; left: 0; top: 9px; width: 12px; height: 12px; border-radius: 50%; background: var(--blush); }
+.lessmore { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 26px; align-items: start; }
+@media (max-width: 600px) { .lessmore { grid-template-columns: 1fr; } }
+.less, .more { position: relative; padding: 26px 24px; }
+.less { background: var(--paper-grey); transform: rotate(-1.5deg); }
+.less .line { text-decoration: line-through; text-decoration-color: var(--rose); text-decoration-thickness: 2px; color: var(--ink); }
+.more { background: var(--white); box-shadow: var(--shadow-paper); transform: rotate(1deg); }
+.more .line { font: 400 34px/1.1 var(--hand); color: var(--ink-deep); }
+.less .k, .more .k { display: block; margin-bottom: 10px; font: 400 15px/1 var(--marker); letter-spacing: .05em; text-transform: uppercase; color: var(--rose); }
+.less .line { margin: 0; font-size: 19px; }
+.more .line { margin: 0; }
+.words { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 30px; }
+@media (max-width: 760px) { .words { grid-template-columns: 1fr; } }
+.words .col { padding: 28px; background: var(--white); box-shadow: var(--shadow-paper); }
+.words .col.avoid { background: var(--paper-grey); box-shadow: none; }
+.words h3 { margin: 0 0 16px; font: 400 34px/1 var(--hand); color: var(--ink-deep); }
+.words ul { margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 10px; }
+.words li { padding: 8px 14px; background: var(--lilac); font-size: 16px; color: var(--ink-deep); }
+.words .avoid li { background: var(--white); text-decoration: line-through; text-decoration-color: var(--rose); color: var(--ink); }
+.mech { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0; border-top: 1px dashed var(--rule); }
+.mech div { padding: 20px 20px 22px 0; border-bottom: 1px dashed var(--rule); }
+.mech b { display: block; font: 400 15px/1 var(--marker); letter-spacing: .05em; text-transform: uppercase; color: var(--rose); margin-bottom: 8px; }
+.mech p { margin: 0; font-size: 16px; }
+
+/* ── Scrapbook ─────────────────────────────────────── */
+.desk { position: relative; height: clamp(560px, 60vw, 760px); background: var(--paper-grey); box-shadow: inset 0 0 0 1px var(--rule); overflow: hidden; }
+.desk > * { position: absolute; }
+.mats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 26px; }
+@media (max-width: 960px) { .mats { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 600px) { .mats { grid-template-columns: 1fr; } }
+.mat { display: grid; grid-template-rows: 260px auto; background: var(--white); box-shadow: inset 0 0 0 1px var(--rule); }
+.mat .show { position: relative; display: grid; place-items: center; overflow: hidden; background: var(--paper-warm); padding: 20px; }
+.mat .txt { padding: 18px 22px 22px; }
+.mat h3 { margin: 0 0 6px; font: 400 30px/1 var(--hand); color: var(--ink-deep); }
+.mat p { margin: 0; font-size: 16px; }
+.mat code { font: 500 13px/1 var(--sans); color: var(--rose); }
+.folder { width: 88%; }
+.folder .tab { display: inline-block; margin-left: 24px; padding: 10px 20px 4px; background: var(--taupe); border-radius: 16px 16px 0 0; font: 400 22px/1 var(--marker); color: var(--ink-deep); }
+.folder .body { background: var(--taupe); padding: 10px; box-shadow: 1px 2px 2px var(--shade); }
+.folder .body div { background: var(--paper-grey); padding: 14px; font-size: 14px; }
+.folder.oat .tab, .folder.oat .body { background: var(--oat); }
+.tilts { display: flex; flex-wrap: wrap; gap: 30px; justify-content: space-between; }
+.tilts figure { margin: 0; text-align: center; flex: 1 1 140px; }
+.tilts .card { width: 120px; height: 150px; margin: 0 auto 16px; background: var(--white); box-shadow: var(--shadow-photo); transform: rotate(var(--r)); }
+.tilts b { display: block; font: 400 28px/1 var(--hand); color: var(--ink-deep); }
+.tilts span { font-size: 15px; }
+.shadows { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; }
+.shadows figure { margin: 0; }
+.shadows .s { height: 150px; background: var(--white); }
+.shadows figcaption { margin-top: 14px; font-size: 15px; }
+.shadows figcaption b { display: block; font: 400 26px/1 var(--hand); color: var(--ink-deep); }
+
+/* ── Motion ────────────────────────────────────────── */
+.demos { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; }
+@media (max-width: 900px) { .demos { grid-template-columns: 1fr; } }
+.demo { display: grid; grid-template-rows: 300px auto; background: var(--white); box-shadow: inset 0 0 0 1px var(--rule); }
+.demo .show { position: relative; display: grid; place-items: center; overflow: hidden; background: var(--paper-warm); }
+.demo .txt { padding: 18px 22px 22px; display: grid; gap: 6px; }
+.demo .txt .row { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+.demo h3 { margin: 0; font: 400 30px/1 var(--hand); color: var(--ink-deep); }
+.demo p { margin: 0; font-size: 16px; }
+.demo .t { font-size: 14px; color: var(--rose); font-variant-numeric: tabular-nums; }
+.replay { font: 500 14px/1 var(--sans); padding: 9px 14px; background: var(--cocoa); color: var(--white); border: 0; cursor: pointer; }
+.replay:hover { background: var(--cocoa-deep); }
+.ringdemo { position: relative; padding: 34px 54px; }
+.ringdemo h4 { position: relative; margin: 0; font: 400 46px/1 var(--hand); color: var(--ink-deep); }
+.ringdemo svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.ringdemo path { fill: none; stroke: var(--blush); stroke-width: 4; stroke-linecap: round; stroke-dasharray: 1600; stroke-dashoffset: 0; }
+.ringdemo.play path { animation: draw 1.6s ease-in-out both; }
+@keyframes draw { from { stroke-dashoffset: 1600; } }
+.count { display: flex; gap: 34px; }
+.count div { text-align: center; }
+.count b { display: block; font: 400 72px/1 var(--hand); color: var(--ink-deep); font-variant-numeric: tabular-nums; min-width: 2.2ch; }
+.count span { font-size: 15px; }
+.loveline { position: relative; font: 600 30px/1 var(--sans); color: var(--ink-deep); }
+.loveline em { position: relative; font-style: normal; color: var(--rose); }
+.loveline .hearts { inset: auto -20px 0; height: 220px; }
+.liftdemo { display: flex; gap: 30px; align-items: center; }
+.liftdemo .roid { width: 150px; }
+.liftdemo .roid:hover { transform: rotate(0deg) translateY(-6px); box-shadow: var(--shadow-lift); }
+.timing { width: 100%; border-collapse: collapse; font-size: 16px; }
+.timing th, .timing td { text-align: left; padding: 14px 12px 14px 0; border-bottom: 1px dashed var(--rule); vertical-align: top; }
+.timing th { font: 400 15px/1 var(--marker); letter-spacing: .05em; text-transform: uppercase; color: var(--rose); }
+.timing td:first-child { font: 400 24px/1.1 var(--hand); color: var(--ink-deep); }
+.tablewrap { overflow-x: auto; }
+
+/* ── Brand in use ──────────────────────────────────── */
+.use-grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 22px; }
+.use-grid > * { min-width: 0; }
+.u-a { grid-column: span 5; } .u-b { grid-column: span 7; } .u-c { grid-column: span 4; } .u-d { grid-column: span 4; } .u-e { grid-column: span 4; }
+@media (max-width: 900px) { .u-a, .u-b, .u-c, .u-d, .u-e { grid-column: span 12; } }
+.use-grid figure { margin: 0; }
+.use-grid .photo { aspect-ratio: 1; }
+.use-grid figcaption { margin-top: 12px; font-size: 15px; }
+.use-grid figcaption b { font: 400 24px/1 var(--hand); color: var(--ink-deep); display: block; }
+.mocks { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 40px; align-items: start; }
+@media (max-width: 900px) { .mocks { grid-template-columns: 1fr; } }
+.post { position: relative; aspect-ratio: 1; background: var(--blush); overflow: hidden; box-shadow: var(--shadow-paper); }
+.post .roid { position: absolute; width: 54%; left: 9%; top: 12%; --r: -5deg; }
+.post .head-hand { position: absolute; right: 7%; top: 14%; width: 38%; font: 400 clamp(30px, 3.6vw, 50px)/.95 var(--hand); color: var(--ink-deep); text-align: right; }
+.post .bfly { position: absolute; right: 7%; bottom: 7%; width: 18%; }
+.post .sticker { position: absolute; right: 24%; bottom: 20%; --s: 22%; font-size: clamp(12px, 1.3vw, 16px); --r: 8deg; }
+.email { background: var(--white); box-shadow: var(--shadow-paper); max-width: 600px; }
+.email .spiral { height: 26px; background: linear-gradient(var(--cocoa) 10px, transparent 10px); padding: 0 10px; }
+.email .spiral i { height: 22px; width: 5px; }
+.email .spiral i::after { width: 10px; height: 10px; }
+.email .eh { display: grid; justify-items: center; gap: 14px; padding: 20px 34px 34px; text-align: center; }
+.email .eh img.logo { width: 180px; }
+.email .eh h3 { margin: 6px 0 0; font: 400 46px/1 var(--hand); color: var(--ink-deep); }
+.email .eh p { margin: 0; font-size: 16px; max-width: 46ch; }
+.email .ef { background: var(--cocoa); color: var(--white); padding: 18px 24px; font-size: 12px; display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.email .ef a { color: var(--blush); }
+
+/* ── Footer ────────────────────────────────────────── */
+.foot { margin-top: 40px; background: var(--cocoa); color: var(--white); padding-block: 50px 26px; }
+.foot .in { max-width: 1440px; margin: 0 auto; display: grid; gap: 28px; }
+.foot .row1 { display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap; }
+.foot img { width: 190px; }
+.foot nav { display: flex; flex-wrap: wrap; gap: 10px 28px; }
+.foot nav a { color: var(--white); text-decoration: none; font-size: 15px; }
+.foot nav a:hover { color: var(--blush); text-decoration: underline; text-underline-offset: 4px; }
+.foot .legal { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; font-size: 13px; }
+.foot .legal span:last-child { color: var(--blush); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .001s !important; animation-delay: 0s !important; animation-iteration-count: 1 !important; transition: none !important; }
+  .hearts { display: none; }
+}
+</style>
+
+<header class="top">
+  <div class="spiral" aria-hidden="true" id="spiral"></div>
+  <div class="bar wrapx">
+    <a class="home" href="#" aria-label="Elsie's Story Digital Brand Book home"><img src="assets/img/logo.png" alt=""><span class="bb">Digital Brand Book</span></a>
+    <nav class="seg" aria-label="Sections">
+      <a href="#" data-nav="home">Home</a>
+      <a href="#brand" data-nav="brand">Brand</a>
+    </nav>
+    <a class="site" href="https://elsiesstory.org/">elsiesstory.org ↗</a>
+  </div>
+</header>
+
+<main id="app">
+
+<!-- ═════════ HOME ═════════ -->
+<section data-view="home" class="stage wrapx" aria-label="Home">
+  <div class="hearts" aria-hidden="true">
+    <span style="left:12%;--d:7s;--dl:0s;--x:30px"></span><span style="left:22%;--d:8s;--dl:2.4s;--x:-20px"></span><span style="left:37%;--d:6.5s;--dl:4s;--x:10px"></span><span style="left:63%;--d:7.5s;--dl:1.2s;--x:-30px"></span><span style="left:78%;--d:6.8s;--dl:3.1s;--x:20px"></span><span style="left:90%;--d:8.2s;--dl:5s;--x:-10px"></span>
+  </div>
+  <a class="scatter s1" href="#story"><span class="roid" style="--r:-6deg"><span class="im"><img src="assets/img/xmas-star.jpg" alt="A smiling child in an Elsie's Story Christmas jumper with a red bow"></span><span class="pen">Our Story</span></span></a>
+  <a class="scatter s2" href="#photography"><span class="roid" style="--r:5deg"><span class="im"><img src="assets/img/wings-walk.jpg" alt="Supporters walking a hillside path wearing pink butterfly wings"></span><span class="pen">Photography</span></span></a>
+  <a class="scatter s3" href="#illustration"><span class="roid" style="--r:4deg"><span class="im"><img src="assets/img/garden-watercolour.jpg" alt="Watercolour of gardening tools, plant pots and pink hearts"></span><span class="pen">Illustration</span></span></a>
+  <a class="scatter s4" href="#in-use"><span class="roid" style="--r:-4deg"><span class="im"><img src="assets/img/candle.jpg" alt="An Elsie's Story candle and gift box with pink roses"></span><span class="pen">In Use</span></span></a>
+  <div class="centre">
+    <h1 class="vh">Elsie's Story Charitable Trust: Digital Brand Book</h1>
+    <div class="logo-anim" id="logoAnim" role="img" aria-label="The Elsie's Story Charitable Trust logo" title="Click to watch it again">
+      <img class="logo-static" src="assets/img/logo.png" alt="">
+      <span class="nib" aria-hidden="true"></span>
+    </div>
+    <p class="bbk">Digital Brand Book</p>
+    <p class="sub">Everything you need to design for <b>Elsie's Story</b>, on screen and off, in one notebook.</p>
+    <a class="btn" href="#brand">Open the Brand Book</a>
+    <button class="again" type="button" id="logoAgain">Watch it again ↺</button>
+  </div>
+</section>
+
+<!-- ═════════ BRAND GRID ═════════ -->
+<section data-view="brand" class="wrapx" aria-label="Brand" hidden>
+  <div class="tiles-head">
+    <h1>Digital Brand Book</h1>
+    <p>Ten pages of the notebook. Each one shows a part of the brand, how it works and how to use it. Pick a page.</p>
+  </div>
+  <div class="tiles">
+    <a class="tile t-story tile--wide" href="#story">
+      <h2>Our Story</h2><span class="go">Open →</span>
+      <div class="art" aria-hidden="true">
+        <div class="note wig" style="left:8%;bottom:-6%;width:46%;--r:-3deg;--lr:-1deg;--ly:-8px;font-size:15px"><p>Elsie's Story began as a way for us to turn our love for her into something that could help others.</p><p class="hand" style="font-size:30px;color:var(--ink-deep)">With love, Jen &amp; David</p></div>
+        <span class="roid wig" style="right:8%;bottom:10%;width:30%;--r:5deg;--lr:2deg;--ly:-10px"><span class="im"><img src="assets/img/elsie.jpg" alt=""></span><span class="pen">Our Girl</span></span>
+      </div>
+    </a>
+    <a class="tile t-logo" href="#logo">
+      <h2>Logo</h2><span class="go">Open →</span>
+      <div class="art" aria-hidden="true">
+        <img class="wig" src="assets/img/butterfly-mark.png" alt="" style="left:50%;top:52%;width:46%;margin:-23% 0 0 -23%;--lr:-8deg;--ly:-12px">
+      </div>
+    </a>
+    <a class="tile t-colour" href="#colour">
+      <h2>Colour</h2><span class="go">Open →</span>
+      <div class="art" aria-hidden="true">
+        <i class="wig" style="left:10%;bottom:52%;width:80%;height:15%;background:var(--blush);--r:-3deg;transform:rotate(-3deg);--lr:-5deg"></i>
+        <i class="wig" style="left:6%;bottom:38%;width:86%;height:15%;background:var(--taupe);transform:rotate(2deg);--lr:4deg"></i>
+        <i class="wig" style="left:12%;bottom:24%;width:78%;height:15%;background:var(--paper);transform:rotate(-1deg);--lr:-2deg"></i>
+        <i class="wig" style="left:8%;bottom:10%;width:84%;height:15%;background:var(--cocoa);transform:rotate(3deg);--lr:6deg"></i>
+        <i class="wig" style="left:68%;bottom:6%;width:14%;aspect-ratio:1;border-radius:50%;background:var(--rose);--ly:-14px"></i>
+      </div>
+    </a>
+    <a class="tile t-type" href="#type">
+      <h2>Typography</h2><span class="go">Open →</span>
+      <div class="art" aria-hidden="true">
+        <span class="wig hand" style="left:8%;bottom:4%;font-size:clamp(130px,15vw,230px);line-height:1;color:var(--ink-deep);--lr:-4deg">Aa</span>
+        <span class="wig marker" style="right:10%;bottom:14%;font-size:clamp(50px,5vw,80px);line-height:1;color:var(--rose);--lr:6deg;--ly:-10px">Aa</span>
+      </div>
+    </a>
+    <a class="tile t-illus" href="#illustration">
+      <h2>Illustration</h2><span class="go">Open →</span>
+      <div class="art" aria-hidden="true">
+        <img class="wig" src="assets/img/rainbow.webp" alt="" style="left:14%;bottom:8%;width:56%;--lr:-4deg;--ly:-8px">
+        <img class="wig" src="assets/img/clouds.webp" alt="" style="right:6%;top:20%;width:36%;--ly:-14px">
+        <img class="wig" src="assets/img/sunny.webp" alt="" style="right:10%;bottom:6%;width:22%;--lr:20deg">
+      </div>
+    </a>
+    <a class="tile t-photo" href="#photography">
+      <h2>Photography</h2><span class="go">Open →</span>
+      <div class="art" aria-hidden="true">
+        <span class="roid wig" style="left:12%;bottom:-4%;width:42%;--r:-6deg;--lr:-3deg;--ly:-12px"><span class="im"><img src="assets/img/xmas-arm.jpg" alt=""></span><span class="pen">Together</span></span>
+        <span class="roid wig" style="right:10%;bottom:8%;width:38%;--r:5deg;--lr:3deg;--ly:-6px"><span class="im"><img src="assets/img/squad.jpg" alt=""></span><span class="pen">Our Squad</span></span>
+      </div>
+    </a>
+    <a class="tile t-voice" href="#voice">
+      <h2>Tone of Voice</h2><span class="go">Open →</span>
+      <div class="art" aria-hidden="true">
+        <div class="note wig" style="left:14%;bottom:12%;width:72%;--r:-2deg;--lr:1deg;--ly:-8px"><p class="hand" style="font-size:44px;line-height:44px;margin:0 0 12px;color:var(--ink-deep)">Hello, lovely.</p><p style="font-size:15px">Warm, personal and hopeful. Signed with love.</p></div>
+      </div>
+    </a>
+    <a class="tile t-scrap" href="#scrapbook">
+      <h2>Scrapbook</h2><span class="go">Open →</span>
+      <div class="art" aria-hidden="true">
+        <div class="folder wig" style="left:8%;bottom:6%;width:60%;--lr:-2deg"><span class="tab">Our Grants</span><div class="body"><div>Supporting families when they need it most.</div></div></div>
+        <span class="sticker wig" style="right:10%;top:26%;--s:30%;--r:-8deg;--lr:10deg;font-size:clamp(13px,1.4vw,18px)"><span>Donate</span></span>
+        <img class="wig" src="assets/img/curly-arrow.svg" alt="" style="right:14%;bottom:14%;width:22%;--lr:-10deg">
+      </div>
+    </a>
+    <a class="tile t-motion" href="#motion">
+      <h2>Motion</h2><span class="go">Open →</span>
+      <div class="art" aria-hidden="true">
+        <div class="hearts wig" style="left:0;right:0;bottom:0;height:100%"><span style="left:20%;--d:5s;--x:20px"></span><span style="left:40%;--d:6s;--dl:1.4s;--x:-20px"></span><span style="left:60%;--d:5.5s;--dl:2.6s;--x:14px"></span><span style="left:78%;--d:6.4s;--dl:.6s;--x:-10px"></span></div>
+        <img class="wig" src="assets/img/paper-plane.webp" alt="" style="left:30%;top:36%;width:40%;--lr:-12deg;--ly:-30px">
+      </div>
+    </a>
+    <a class="tile t-use tile--wide" href="#in-use">
+      <h2>Brand in Use</h2><span class="go">Open →</span>
+      <div class="art" aria-hidden="true">
+        <span class="photo wig" style="left:6%;bottom:8%;width:26%;aspect-ratio:1;--r:-4deg;--lr:-2deg;--ly:-8px"><img src="assets/img/candle.jpg" alt=""></span>
+        <span class="photo wig" style="left:36%;bottom:16%;width:26%;aspect-ratio:1;--r:3deg;--lr:1deg;--ly:-14px"><img src="assets/img/tie-dye.jpg" alt=""></span>
+        <span class="photo wig" style="right:6%;bottom:6%;width:28%;aspect-ratio:1;--r:-2deg;--lr:-4deg;--ly:-6px"><img src="assets/img/xmas-label.jpg" alt=""></span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- ═════════ OUR STORY ═════════ -->
+<section data-view="story" class="doc wrapx" aria-label="Our Story" hidden>
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="#brand">Brand</a> / Our Story</nav>
+  <div class="opener">
+    <h1>Our Story</h1>
+    <p class="lead">Elsie's Story is a charity built on love, legacy and action. It supports families, empowers communities and helps people make a difference in ways that truly matter. Everything we design starts here.</p>
+  </div>
+  <div class="collage" aria-hidden="false">
+    <span class="roid" style="left:2%;top:4%;width:min(30%,320px);--r:-4deg"><span class="im"><img src="assets/img/elsie.jpg" alt="Elsie smiling in a white T-shirt and a headband"></span><span class="pen">Our Girl</span></span>
+    <span class="photo" style="left:30%;top:12%;width:min(38%,460px);aspect-ratio:4/3;--r:2deg"><img src="assets/img/wings-walk.jpg" alt="Supporters in pink butterfly wings walking a hillside path above a lake"></span>
+    <span class="roid" style="right:3%;top:0;width:min(26%,290px);--r:5deg"><span class="im"><img src="assets/img/founders.jpg" alt="Jen and David at the Elsie's Story inaugural dinner"></span><span class="pen">Jen &amp; David</span></span>
+    <img src="assets/img/butterfly.webp" alt="" style="left:27%;top:0;width:min(10%,110px);transform:rotate(-12deg)">
+    <span class="tape" style="left:47%;top:8%;--r:-4deg"></span>
+  </div>
+
+  <section class="section">
+    <div class="manifesto">
+      <p class="big-quote">A story that has become a <span>community</span>.</p>
+      <div class="note" style="--r:1deg">
+        <p>Elsie's Story began as a way for us to turn our love for her into something that could help others. What started as something deeply personal has grown into a community united by kindness and action.</p>
+        <p>Every fundraiser, every grant and every act of support helps us continue Elsie's legacy and create meaningful change in her name.</p>
+        <p>With love,</p>
+        <p class="sign">Jen &amp; David</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="head">
+      <h2><small>What we stand on</small>Love, legacy, action</h2>
+      <div class="text"><p>Three words from our mission. They are the test for every piece of design: does it feel loving, does it honour Elsie, and does it help someone do something?</p></div>
+    </div>
+    <div class="pillars">
+      <div class="pillar" style="--r:-1.5deg"><div class="word"><em>L</em>ove</div><p>We lead with warmth. People come to us grieving, giving or asking for help, and the design should feel like a hand on the shoulder.</p><div class="see"><b>In design</b>Soft blush and cream, handwriting, real names, "With love" sign-offs.</div></div>
+      <div class="pillar" style="--r:1deg"><div class="word"><em>L</em>egacy</div><p>Everything carries Elsie's name forward. We keep her story at the centre, told by the people who love her.</p><div class="see"><b>In design</b>The butterfly, the notebook, chapters and pages: a story still being written.</div></div>
+      <div class="pillar" style="--r:-.5deg"><div class="word"><em>A</em>ction</div><p>Love turned into something useful: grants, projects, fundraisers. Every page offers one clear next step.</p><div class="see"><b>In design</b>One sketch button per section. Donate, apply, fundraise, follow.</div></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="head">
+      <h2><small>The big idea</small>A scrapbook that everyone adds to</h2>
+      <div class="text">
+        <p>The brand is a family scrapbook. A spiral-bound notebook, cream paper, polaroids tucked in, notes written in pen and doodles in crayon. It was started by Elsie's family and now every supporter adds a page.</p>
+        <p>That's why nothing is too polished. The handmade parts are the brand. The discipline is in how they're arranged: clear type, generous space and one action at a time.</p>
+        <p class="hand" style="font-size:34px;color:var(--ink-deep);margin-top:20px">"Follow our story – written by you, shared by us."</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="head">
+      <h2><small>What we do</small>Be part of the story</h2>
+      <div class="text"><p>Three ways in. Each gets a card that says what it is and a polaroid that says what to do.</p></div>
+    </div>
+    <div class="pathways">
+      <div><div class="card"><h3>Grants</h3><p>Supporting individuals and communities when they need it most.</p></div><a class="roid" href="#" style="--r:-2deg" onclick="return false"><span class="im"><img src="assets/img/forest-watercolour.jpg" alt="Watercolour of a forest school camp with bunting"></span><span class="pen">Apply Now</span></a></div>
+      <div><div class="card"><h3>Fundraising</h3><p>Take on a challenge or create your own. We'll support you every step of the way.</p></div><a class="roid" href="#" style="--r:2deg" onclick="return false"><span class="im"><img src="assets/img/mini-marathon.jpg" alt="Children in pink Elsie's Story T-shirts at a mini marathon"></span><span class="pen">Make It Happen</span></a></div>
+      <div><div class="card"><h3>Socials</h3><p>Follow our story, written by you and shared by us.</p></div><a class="roid" href="#" style="--r:-1deg" onclick="return false"><span class="im"><img src="assets/img/squad.jpg" alt="Elsie's Squad laughing together with a pink balloon"></span><span class="pen">Follow Our Story</span></a></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="head">
+      <h2><small>With care</small>Showing Elsie</h2>
+      <div class="text">
+        <p>Elsie is at the heart of the charity. Only use photos of her that Jen and David have approved, and keep them where her story is being told: Our Girl, Our Story and the founders' messages.</p>
+        <p>Never crop, filter, decorate or put text over her photos. Show her in a polaroid, as a family would, with her name or "Our Girl" written underneath.</p>
+      </div>
+    </div>
+  </section>
+</section>
+
+<!-- ═════════ LOGO ═════════ -->
+<section data-view="logo" class="doc wrapx" aria-label="Logo" hidden>
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="#brand">Brand</a> / Logo</nav>
+  <div class="opener">
+    <h1>Logo</h1>
+    <p class="lead">Elsie's name, written by hand, with a pink butterfly landing on the E and "Charitable Trust" underneath in blush. It's the one thing in the scrapbook that's never tilted.</p>
+  </div>
+
+  <section class="section" style="border-top:0;padding-top:20px">
+    <div class="head">
+      <h2><small>Three versions</small>Pick the one that fits</h2>
+      <div class="text"><p>The full logo signs off everything. The white logo is for the cocoa footer and dark photos. The butterfly is for small, square spaces where the full logo would be too small to read. Try each on paper and on cocoa.</p></div>
+    </div>
+    <div class="parts">
+      <article class="part" data-light="assets/img/logo.png" data-dark="assets/img/logo-white.png">
+        <div class="plate" style="--w:78%"><img src="assets/img/logo.png" alt="The Elsie's Story logo"></div>
+        <div class="info"><span class="kicker">Sign off</span><h3>The logo</h3><p>Website header, emails, letters, merchandise and anywhere we introduce ourselves.</p>
+          <div class="toggle" role="group" aria-label="Background"><button type="button" data-bg="light" aria-pressed="true">Paper</button><button type="button" data-bg="dark" aria-pressed="false">Cocoa</button></div></div>
+      </article>
+      <article class="part" data-light="assets/img/logo.png" data-dark="assets/img/logo-white.png" data-start="dark">
+        <div class="plate dark" style="--w:78%"><img src="assets/img/logo-white.png" alt="The Elsie's Story logo in white"></div>
+        <div class="info"><span class="kicker">On dark</span><h3>The white logo</h3><p>The footer, the newsletter envelope, dark photos and night-time event graphics.</p>
+          <div class="toggle" role="group" aria-label="Background"><button type="button" data-bg="light" aria-pressed="false">Paper</button><button type="button" data-bg="dark" aria-pressed="true">Cocoa</button></div></div>
+      </article>
+      <article class="part" data-light="assets/img/butterfly-mark.png" data-dark="assets/img/butterfly-mark.png">
+        <div class="plate" style="--w:38%"><img src="assets/img/butterfly-mark.png" alt="The Elsie's Story butterfly mark"></div>
+        <div class="info"><span class="kicker">Be recognised</span><h3>The butterfly</h3><p>Favicons, app icons, social avatars, stickers and anywhere under 140px wide.</p>
+          <div class="toggle" role="group" aria-label="Background"><button type="button" data-bg="light" aria-pressed="true">Paper</button><button type="button" data-bg="dark" aria-pressed="false">Cocoa</button></div></div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" id="animated-logo">
+    <div class="head">
+      <h2><small>Option four</small>The animated logo</h2>
+      <div class="text">
+        <p>The same logo, written by hand. Every stroke was worked out from the logo itself, pixel by pixel: the pen writes each word in one flowing line, dabs the dot on the i and flicks in the apostrophe afterwards, and goes back for the t's downstroke last. As the pen lifts, the butterfly flies in and lands on the E, then "Charitable Trust" stamps in letter by letter. It ends on the exact static logo.</p>
+        <p>Use it for first impressions: the website home page, video intros and end cards, event screens and the opening slide of a presentation.</p>
+      </div>
+    </div>
+    <div class="motion-logo">
+      <div class="stage-plate">
+        <div class="logo-anim" id="logoAnim2" role="img" aria-label="The animated Elsie's Story Charitable Trust logo" title="Click to watch it again">
+          <img class="logo-static" src="assets/img/logo.png" alt="">
+          <span class="nib" aria-hidden="true"></span>
+        </div>
+        <button class="replay" type="button" id="logoAgain2">Play again ↺</button>
+      </div>
+      <div class="beats">
+        <div><b>0.4–6.1s</b><span>The pen writes "Elsie's Story" stroke by stroke, slowing on the curves. The i's dot and the apostrophe go in after each word, and the t's downstroke comes last.</span></div>
+        <div><b>5.2–7.5s</b><span>As the pen lifts, the butterfly flies in on a looping path and lands on the E with a puff of hearts.</span></div>
+        <div><b>7.3–8.6s</b><span>"Charitable Trust" stamps in, one letter at a time.</span></div>
+        <div><b>After</b><span>The butterfly flutters every few seconds, and when someone hovers over it.</span></div>
+      </div>
+    </div>
+    <div class="dd" style="margin-top:40px">
+      <figure class="yes"><figcaption><b>Do</b>Play it once, when someone arrives. Let them replay it if they want.</figcaption></figure>
+      <figure class="yes"><figcaption><b>Do</b>Show the finished static logo straight away for anyone who has reduced motion turned on.</figcaption></figure>
+      <figure class="no"><figcaption><b>Don't</b>Loop it, play it on every page, or put it in emails. Email doesn't support it, so use the static logo there.</figcaption></figure>
+      <figure class="no"><figcaption><b>Don't</b>Run it on cocoa or busy photos. It's made for paper and white.</figcaption></figure>
+    </div>
+    <p class="hint">Need it as a video file (MP4) for social media or events? Ask the team for an export. The page version and video version follow the same timings.</p>
+  </section>
+
+  <section class="section">
+    <div class="head">
+      <h2><small>Breathing room</small>Clear space and size</h2>
+      <div class="text"><p>Give the logo space equal to the height of the butterfly on every side. Nothing else (text, photos or doodles) comes inside that line.</p></div>
+    </div>
+    <div class="space">
+      <div class="board"><div class="box"><span class="x t">x</span><span class="x l">x</span><img src="assets/img/logo.png" alt="The logo inside a dashed clear-space boundary"></div></div>
+      <div class="sizes">
+        <div><img src="assets/img/logo.png" alt="" style="width:200px"><span><b>200px · website header</b>Centred in the bar, between the menus.</span></div>
+        <div><img src="assets/img/logo.png" alt="" style="width:140px"><span><b>140px · smallest on screen</b>35mm in print. Any smaller and the strapline can't be read.</span></div>
+        <div><img src="assets/img/butterfly-mark.png" alt="" style="width:48px"><span><b>Below that, the butterfly</b>Favicons, avatars and app icons.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="head">
+      <h2><small>Please don't</small>Keep the logo as it is</h2>
+      <div class="text"><p>The logo is handwritten, so it's tempting to play with it. Don't. These are the mistakes we see most.</p></div>
+    </div>
+    <div class="misuse">
+      <figure><div class="plate"><img class="l" src="assets/img/logo.png" alt="" style="transform:rotate(-14deg)"><svg class="xmark" viewBox="0 0 100 75" preserveAspectRatio="none" aria-hidden="true"><path d="M20 12 L80 63 M80 12 L20 63"/></svg></div><figcaption><b>Don't tilt it.</b> Photos and stickers tilt. The logo stays straight.</figcaption></figure>
+      <figure><div class="plate"><img class="l" src="assets/img/logo.png" alt="" style="filter:hue-rotate(150deg) saturate(2.4)"><svg class="xmark" viewBox="0 0 100 75" preserveAspectRatio="none" aria-hidden="true"><path d="M20 12 L80 63 M80 12 L20 63"/></svg></div><figcaption><b>Don't recolour it.</b> Cocoa and blush, or all white. Nothing else.</figcaption></figure>
+      <figure><div class="plate"><img class="l" src="assets/img/logo.png" alt="" style="transform:scale(1.45,.75)"><svg class="xmark" viewBox="0 0 100 75" preserveAspectRatio="none" aria-hidden="true"><path d="M20 12 L80 63 M80 12 L20 63"/></svg></div><figcaption><b>Don't stretch or squash it.</b> Always scale it from a corner.</figcaption></figure>
+      <figure><div class="plate"><img class="l" src="assets/img/logo.png" alt="" style="filter:drop-shadow(5px 5px 0 #ac2d4b)"><svg class="xmark" viewBox="0 0 100 75" preserveAspectRatio="none" aria-hidden="true"><path d="M20 12 L80 63 M80 12 L20 63"/></svg></div><figcaption><b>Don't add effects.</b> No shadows, outlines, glows or gradients.</figcaption></figure>
+      <figure><div class="plate"><img src="assets/img/xmas-detail.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"><img class="l" src="assets/img/logo.png" alt="" style="position:relative"><svg class="xmark" viewBox="0 0 100 75" preserveAspectRatio="none" aria-hidden="true"><path d="M20 12 L80 63 M80 12 L20 63"/></svg></div><figcaption><b>Don't put it on busy photos.</b> Use a calm area, or the white logo on a dark photo.</figcaption></figure>
+      <figure><div class="plate"><span style="font:600 40px/1 var(--sans);color:var(--ink-deep)">Elsie's Story</span><svg class="xmark" viewBox="0 0 100 75" preserveAspectRatio="none" aria-hidden="true"><path d="M20 12 L80 63 M80 12 L20 63"/></svg></div><figcaption><b>Don't retype it.</b> Always use the logo files, never the name in a font.</figcaption></figure>
+    </div>
+    <p class="hint">Only PNG versions are published on the website. Ask the charity for the vector (SVG or EPS) masters before printing anything large.</p>
+  </section>
+</section>
+
+<!-- ═════════ COLOUR ═════════ -->
+<section data-view="colour" class="doc wrapx" aria-label="Colour" hidden>
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="#brand">Brand</a> / Colour</nav>
+  <div class="opener">
+    <h1>Colour</h1>
+    <p class="lead">The palette comes from a desk: cream paper, a cocoa pencil, blush pink and the manila of a file folder. It's quiet on purpose. Photos and children's drawings bring the bright colour.</p>
+  </div>
+  <section class="section" style="border-top:0;padding-top:20px">
+    <div class="head">
+      <h2><small>The palette</small>Paint chips</h2>
+      <div class="text"><p>Our nine brand colours, straight from the charity's own palette sheet. Pale Blush is our most used pink. Taupe and Paper Grey are the options for racer colours. Click a chip to copy its hex value.</p></div>
+    </div>
+    <div class="chips" id="chips"></div>
+    <div class="sub-head"><h3>Supporting colours from the website</h3><p>Two more colours the website uses, for the footer and for tiny accents. Use them alongside the brand palette, never instead of it.</p></div>
+    <div class="chips" id="chips-web"></div>
+  </section>
+
+  <section class="section">
+    <div class="head">
+      <h2><small>Balance</small>Mostly paper</h2>
+      <div class="text"><p>Pages are mostly cream paper with cocoa-grey writing. Soft tints set things apart, cocoa grounds the bottom of the page, and rose appears only in small marks: a focus ring, a heart, the word "love".</p></div>
+    </div>
+    <div class="prop" role="img" aria-label="Proportions: paper 70%, ink 15%, soft tints 10%, cocoa 4%, rose 1%">
+      <div style="flex:70;background:var(--paper);color:var(--ink-deep)"><span><b>Paper</b>70%</span></div>
+      <div style="flex:15;background:var(--ink);color:var(--white)"><span><b>Ink</b>15%</span></div>
+      <div style="flex:10;background:var(--blush);color:var(--ink-deep)"><span><b>Tints</b>10%</span></div>
+      <div style="flex:4;background:var(--cocoa);color:var(--white)"><span><b>&nbsp;</b>4%</span></div>
+      <div style="flex:1.4;background:var(--rose)"></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="head">
+      <h2><small>Readable for everyone</small>Pairings that work</h2>
+      <div class="text"><p>Body text needs 4.5:1 contrast (WCAG 2.2 AA). The soft tints are too light for our usual ink colour, so on blush, oat and taupe always write in cocoa.</p></div>
+    </div>
+    <div class="pairs" id="pairs"></div>
+    <p class="hint">Pale Blush is a background, never a text colour: as text on white it's only 1.70:1. Where links or buttons turn pink on hover, they must also tilt or underline.</p>
+  </section>
+</section>
+
+<!-- ═════════ TYPE ═════════ -->
+<section data-view="type" class="doc wrapx" aria-label="Typography" hidden>
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="#brand">Brand</a> / Typography</nav>
+  <div class="opener">
+    <h1>Typography</h1>
+    <p class="lead">Three typefaces, each with one job. Think of them as the pen, the marker and the printed page. Feelings in pen, labels in marker, and everything people need to read in print.</p>
+  </div>
+  <section class="section" style="border-top:0;padding-top:20px">
+    <div class="faces">
+      <div class="face"><div class="lbl"><span class="k">The pen</span><h3>Paperink</h3><p>Headings, signatures, polaroid captions and big numbers. One per section.</p><div class="dls"><a class="dl" href="assets/fonts/Paperink-Regular.ttf" download data-file="Paperink-Regular.ttf">Download Paperink <small>TTF · 502 KB</small></a></div></div><div class="spec"><div class="spec-hand">Be Part of the Story</div><div class="alpha">Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk 0123456789</div></div></div>
+      <div class="face"><div class="lbl"><span class="k">The marker</span><h3>Lazy Dog</h3><p>Short labels: folder tabs, stickers and story titles. Two to four words.</p><div class="dls"><a class="dl" href="assets/fonts/LazyDog-Regular.ttf" download data-file="LazyDog-Regular.ttf">Download Lazy Dog <small>TTF · 78 KB</small></a></div></div><div class="spec"><div class="spec-marker">OUR GRANTS</div><div class="alpha">Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk 0123456789</div></div></div>
+      <div class="face"><div class="lbl"><span class="k">The printed page</span><h3>Jost</h3><p>Paragraphs, buttons, navigation and forms. Free from Google Fonts.</p><div class="dls"><a class="dl" href="assets/fonts/Jost-Variable.ttf" download data-file="Jost-Variable.ttf">Download Jost <small>TTF · 132 KB</small></a><a class="dl" href="assets/fonts/Jost-Italic-Variable.ttf" download data-file="Jost-Italic-Variable.ttf">Jost Italic <small>TTF · 141 KB</small></a></div></div><div class="spec"><div class="spec-sans">Kindness and action.</div><div class="alpha">Regular 400 · <b style="font-weight:600">Semibold 600</b> · Aa Bb Cc 0123456789</div></div></div>
+    </div>
+    <p class="hint dl-note" id="dl-note">The fonts install like any other on a Mac or PC. Variable Jost files hold every weight from Thin to Black. Paperink and Lazy Dog are licensed display fonts: use them only for Elsie's Story work, and check the licence covers any new device or agency before sharing them. Jost is free under the SIL Open Font License.</p>
+  </section>
+
+  <section class="section">
+    <div class="head">
+      <h2><small>The scale</small>Sizes from the website</h2>
+      <div class="text"><p>Handwritten headings shrink with the screen using <code>clamp()</code>. Body text never goes below 18px on the web.</p></div>
+    </div>
+    <div class="scale">
+      <div class="row"><code>hand-hero</code><div class="s hand" style="font-size:clamp(48px,8vw,120px);line-height:.85">Elsie's Story</div><span class="m">120 / 0.8 · clamp 38–120</span></div>
+      <div class="row"><code>hand-display</code><div class="s hand" style="font-size:clamp(38px,6vw,86px);line-height:1">A Story that has become a Community</div><span class="m">86 / 1 · clamp 38–86</span></div>
+      <div class="row"><code>hand-title</code><div class="s hand" style="font-size:clamp(30px,4vw,52px);line-height:1">Be Part of the Story</div><span class="m">52 / 1</span></div>
+      <div class="row"><code>hand-pen</code><div class="s hand" style="font-size:32px;line-height:1.1">With love, Jen &amp; David</div><span class="m">32 / 1.1</span></div>
+      <div class="row"><code>marker-title</code><div class="s marker" style="font-size:clamp(22px,2.5vw,36px)">Who We've Helped</div><span class="m">36 / 1</span></div>
+      <div class="row"><code>button</code><div class="s" style="font:600 24px/1 var(--sans)">Donate Now</div><span class="m">24 / 1 · 600</span></div>
+      <div class="row"><code>lead</code><div class="s" style="font-size:20px;line-height:1.4">Because of your support, Elsie's Story continues to fund projects.</div><span class="m">20 / 1.4</span></div>
+      <div class="row"><code>body</code><div class="s" style="font-size:18px;line-height:1.4">Every fundraiser, every grant and every act of support helps us continue Elsie's legacy.</div><span class="m">18 / 1.4</span></div>
+      <div class="row"><code>caption</code><div class="s" style="font-size:14px;line-height:1.4">I agree to receive news and updates from Elsie's Story.</div><span class="m">14 / 1.4</span></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="head">
+      <h2><small>Together</small>How a section reads</h2>
+      <div class="text"><p>A handwritten heading opens the section with feeling. A short Jost paragraph gives the facts. One sketch button says what to do next.</p></div>
+    </div>
+    <div class="inuse">
+      <div class="l"><h3>Our Impact So Far</h3><p>Because of your support, Elsie's Story continues to fund projects, uplift families and bring people together in meaningful ways.</p><a class="btn" href="#" onclick="return false">Donate Now</a></div>
+      <div class="r">
+        <div class="tag"><span>Our Impact So Far</span><span>Paperink · hand-display</span></div>
+        <div class="tag"><span style="font:400 16px/1.4 var(--sans);color:var(--ink)">Because of your support…</span><span>Jost 400 · lead</span></div>
+        <div class="tag"><span style="font:600 18px/1 var(--sans);color:var(--ink-deep)">Donate Now</span><span>Jost 600 · button</span></div>
+        <p style="margin:12px 0 0;font-size:15px">If Paperink can't load (in an email, say), use the heading as an image with real alt text, or fall back to Jost 600. Never swap in another script font.</p>
+      </div>
+    </div>
+  </section>
+</section>
+
+<!-- ═════════ ILLUSTRATION ═════════ -->
+<section data-view="illustration" class="doc wrapx" aria-label="Illustration" hidden>
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="#brand">Brand</a> / Illustration</nav>
+  <div class="opener">
+    <h1>Illustration</h1>
+    <p class="lead">Crayon doodles that look like a child drew them, because some of them did. Then soft watercolour scenes with little pink hearts. Hover over the board to meet them.</p>
+  </div>
+  <div class="board" id="board">
+    <figure class="it" style="left:4%;top:8%;width:22%;--r:-6deg"><img src="assets/img/rainbow.webp" alt="Rainbow"><figcaption>Rainbow · hope</figcaption></figure>
+    <figure class="it" style="left:31%;top:5%;width:15%;--r:8deg"><img src="assets/img/butterfly.webp" alt="Butterfly"><figcaption>Butterfly · Elsie</figcaption></figure>
+    <figure class="it" style="left:52%;top:9%;width:20%;--r:-3deg"><img src="assets/img/clouds.webp" alt="Clouds"><figcaption>Clouds</figcaption></figure>
+    <figure class="it" style="right:4%;top:6%;width:16%;--r:10deg"><img src="assets/img/sunny.webp" alt="Sun with a smiling face"><figcaption>Sunny</figcaption></figure>
+    <figure class="it" style="left:7%;top:48%;width:16%;--r:5deg"><img src="assets/img/smiley.webp" alt="Smiley face"><figcaption>Smiley</figcaption></figure>
+    <figure class="it" style="left:28%;top:42%;width:22%;--r:-5deg"><img src="assets/img/paper-plane.webp" alt="Paper plane"><figcaption>Paper plane · news</figcaption></figure>
+    <figure class="it" style="left:55%;top:44%;width:20%;--r:4deg"><img src="assets/img/music-notes.webp" alt="Music notes"><figcaption>Music · events</figcaption></figure>
+    <figure class="it" style="right:5%;top:46%;width:13%;--r:-8deg"><img src="assets/img/smile-swoosh.webp" alt="Smile swoosh"><figcaption>Smile</figcaption></figure>
+    <figure class="it" style="left:12%;bottom:6%;width:22%;--r:-3deg"><img src="assets/img/making-peace.webp" alt="The words making peace with stars"><figcaption>Making peace</figcaption></figure>
+    <figure class="it" style="left:44%;bottom:10%;width:20%;--r:2deg"><img src="assets/img/squiggle.webp" alt="Pink squiggle"><figcaption>Squiggle · underline</figcaption></figure>
+    <figure class="it" style="right:10%;bottom:6%;width:15%;--r:-10deg"><img src="assets/img/curly-arrow.svg" alt="Curly arrow"><figcaption>Curly arrow · pointer</figcaption></figure>
+  </div>
+
+  <section class="section" style="margin-top:50px">
+    <div class="head">
+      <h2><small>Three kinds</small>From doodle to scene</h2>
+      <div class="text"><p>Use the simplest one that does the job. Doodles decorate. Watercolours tell a scene. Children's drawings are the real thing, credited by first name.</p></div>
+    </div>
+    <div class="tiers">
+      <div class="tier"><div class="frame" style="--r:-2deg"><img src="assets/img/butterfly.webp" alt="Crayon butterfly"></div><h3>Crayon doodles</h3><p>Blush, oat and ink only. Overlap a photo corner, sit in the margins, or point at a button. Three per screen at most.</p></div>
+      <div class="tier"><div class="frame" style="--r:1.5deg"><img src="assets/img/garden-watercolour.jpg" alt="Watercolour garden scene"></div><h3>Watercolour scenes</h3><p>For grants and projects: what the money made possible. Loose, soft, with a scatter of pink hearts. Always on white.</p></div>
+      <div class="tier"><div class="frame" style="--r:-1deg"><img src="assets/img/xmas-detail.jpg" alt="Child's Christmas drawing printed on a pink jumper" style="object-fit:cover"></div><h3>Children's artwork</h3><p>Designs drawn by children, like the Christmas jumper. Credit the artist by first name and age, with permission: "Designed by Ava, 7".</p></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="head"><h2><small>Do and don't</small>Keep it hand-made</h2><div class="text"><p>The doodles only work because they're real. Don't mix in anything that looks generated, vector or stock.</p></div></div>
+    <div class="dd">
+      <figure class="yes"><div class="photo" style="aspect-ratio:3/2;position:relative;--r:-1deg"><img src="assets/img/xmas-jump.jpg" alt="" style="object-position:center 30%"><img src="assets/img/butterfly.webp" alt="" style="position:absolute;width:30%;height:auto;left:-8%;bottom:-12%;transform:rotate(-10deg)"></div><figcaption><b>Do</b>Overlap one doodle at a photo corner, at about 40% of its width.</figcaption></figure>
+      <figure class="no"><div class="photo" style="aspect-ratio:3/2;position:relative;display:grid;place-items:center;background:var(--white);font-size:72px;letter-spacing:10px">🦋🌈☀️<svg class="xmark" viewBox="0 0 100 75" preserveAspectRatio="none" aria-hidden="true"><path d="M20 12 L80 63 M80 12 L20 63"/></svg></div><figcaption><b>Don't</b>Use emoji, icon sets or clip art in place of the drawings.</figcaption></figure>
+      <figure class="no"><div class="photo" style="aspect-ratio:3/2;position:relative;display:grid;place-items:center;background:var(--white)"><img src="assets/img/rainbow.webp" alt="" style="width:50%;height:auto;filter:hue-rotate(190deg) saturate(3)"><svg class="xmark" viewBox="0 0 100 75" preserveAspectRatio="none" aria-hidden="true"><path d="M20 12 L80 63 M80 12 L20 63"/></svg></div><figcaption><b>Don't</b>Recolour doodles outside blush, oat and ink.</figcaption></figure>
+    </div>
+  </section>
+</section>
+
+<!-- ═════════ PHOTOGRAPHY ═════════ -->
+<section data-view="photography" class="doc wrapx" aria-label="Photography" hidden>
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="#brand">Brand</a> / Photography</nav>
+  <div class="opener">
+    <h1>Photography</h1>
+    <p class="lead">Real people, real moments, warm light. Pictures you'd stick in a family album, not ones you'd buy from a stock library.</p>
+  </div>
+  <div class="wall">
+    <span class="roid" style="--r:-2deg"><span class="im"><img src="assets/img/xmas-arm.jpg" alt="Two children, arms around each other, showing the backs of their Christmas jumpers"></span><span class="pen">Together</span></span>
+    <span class="roid" style="--r:2deg"><span class="im"><img src="assets/img/squad.jpg" alt="Elsie's Squad laughing with a pink balloon"></span><span class="pen">Elsie's Squad</span></span>
+    <span class="roid" style="--r:-1deg"><span class="im"><img src="assets/img/xmas-tongue.jpg" alt="A girl pulling a face beside her dad in Christmas jumpers"></span><span class="pen">Silly Faces</span></span>
+    <span class="roid" style="--r:3deg"><span class="im"><img src="assets/img/wings-walk.jpg" alt="Walkers in pink butterfly wings on a hill"></span><span class="pen">Wings On</span></span>
+    <span class="roid" style="--r:-3deg"><span class="im"><img src="assets/img/mini-marathon.jpg" alt="Children in pink T-shirts at a mini marathon"></span><span class="pen">Mini Marathon</span></span>
+    <span class="roid" style="--r:1deg"><span class="im"><img src="assets/img/founders-speech.jpg" alt="Jen speaking at the inaugural dinner while David listens"></span><span class="pen">The First Dinner</span></span>
+    <span class="roid" style="--r:-2deg"><span class="im"><img src="assets/img/xmas-star.jpg" alt="A grinning child with a red star bow"></span><span class="pen">Christmas</span></span>
+    <span class="roid" style="--r:2deg"><span class="im"><img src="assets/img/fundraising-team.webp" alt="Elsie's Crew runners in matching T-shirts"></span><span class="pen">Elsie's Crew</span></span>
+  </div>
+
+  <section class="section" style="margin-top:20px">
+    <div class="head"><h2><small>The direction</small>Three things to look for</h2><div class="text"><p>If a photo has all three, use it. If it has none, don't.</p></div></div>
+    <div class="principles">
+      <div class="principle"><span class="photo" style="--r:-1deg"><img src="assets/img/xmas-tongue.jpg" alt="A child pulling a funny face"></span><h3>Candid and joyful</h3><p>Caught mid-laugh, mid-run, mid-hug. Kids being kids. Never posed in a line staring at the camera.</p></div>
+      <div class="principle"><span class="photo" style="--r:1deg"><img src="assets/img/xmas-girl.jpg" alt="A girl in a pink jumper against a pink wall"></span><h3>Warm and soft</h3><p>Natural light, blush and cream tones, a touch of film softness. No harsh flash or heavy filters.</p></div>
+      <div class="principle"><span class="photo" style="--r:-.5deg"><img src="assets/img/wings-walk.jpg" alt="Supporters in wings on a walk"></span><h3>Community in action</h3><p>People doing something together: walking, running, making, celebrating. Show the "action" in love, legacy and action.</p></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="head"><h2><small>Framing</small>Show photos like a scrapbook</h2><div class="text"><p>Put photos in a polaroid with a pen caption, or lay them loose with a short shadow. Never full-bleed with text over the top.</p></div></div>
+    <div class="dd">
+      <figure class="yes"><span class="roid" style="--r:-2deg;max-width:300px;margin:0 auto"><span class="im"><img src="assets/img/xmas-arm.jpg" alt=""></span><span class="pen">Together</span></span><figcaption><b>Do</b>Polaroid, tilted by about 2°, with two or three words in pen.</figcaption></figure>
+      <figure class="no"><div class="photo" style="position:relative;aspect-ratio:4/3"><img src="assets/img/squad.jpg" alt=""><span style="position:absolute;inset:auto 0 0;padding:18px;font:600 24px/1.2 var(--sans);color:var(--white);background:rgba(0,0,0,.45)">Donate to Elsie's Story today!</span><svg class="xmark" viewBox="0 0 100 75" preserveAspectRatio="none" aria-hidden="true"><path d="M20 12 L80 63 M80 12 L20 63"/></svg></div><figcaption><b>Don't</b>Put text or buttons over a photo, or crop it edge to edge as a banner.</figcaption></figure>
+      <figure class="no"><div class="photo" style="position:relative;aspect-ratio:4/3"><img src="assets/img/xmas-girl.jpg" alt="" style="filter:saturate(2.4) contrast(1.4)"><svg class="xmark" viewBox="0 0 100 75" preserveAspectRatio="none" aria-hidden="true"><path d="M20 12 L80 63 M80 12 L20 63"/></svg></div><figcaption><b>Don't</b>Push the colour or contrast. Keep it soft and true.</figcaption></figure>
+    </div>
+    <p class="hint">Consent first: only use photos of children with written permission from their parents or guardians, and never show anyone in distress.</p>
+  </section>
+</section>
+
+<!-- ═════════ VOICE ═════════ -->
+<section data-view="voice" class="doc wrapx" aria-label="Tone of voice" hidden>
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="#brand">Brand</a> / Tone of Voice</nav>
+  <div class="opener">
+    <h1>Tone of Voice</h1>
+    <p class="lead">We speak like Elsie's family and friends would: warm, honest and hopeful. Three principles, used together, in everything we write.</p>
+  </div>
+
+  <div class="vp">
+    <div><h3><small>Principle one</small>Warm, never sad</h3>
+      <ul class="how"><li><b>Lead with love,</b> not loss. Talk about what's growing, not only what's gone.</li><li><b>Be gentle with grief.</b> Never use Elsie's story to make people feel guilty.</li><li><b>Sign off with love.</b> "With love, Jen &amp; David" beats "Kind regards".</li></ul></div>
+    <div class="lessmore"><div class="less"><span class="k">Less this</span><p class="line">Every day, families face heartbreaking tragedy. Without your donation, they'll have nowhere to turn.</p></div><div class="more"><span class="k">More this</span><p class="line">Every gift helps a family feel a little less alone.</p></div></div>
+  </div>
+  <div class="vp">
+    <div><h3><small>Principle two</small>Personal, never corporate</h3>
+      <ul class="how"><li><b>Say "we", "you" and "Elsie".</b> Real names, real people.</li><li><b>Write like you'd talk</b> to a friend over a cuppa.</li><li><b>Skip the jargon.</b> No "beneficiaries", "stakeholders" or "impactful".</li></ul></div>
+    <div class="lessmore"><div class="less"><span class="k">Less this</span><p class="line">The organisation provides grant funding to eligible beneficiaries across the region.</p></div><div class="more"><span class="k">More this</span><p class="line">We fund the things families need most.</p></div></div>
+  </div>
+  <div class="vp">
+    <div><h3><small>Principle three</small>Hopeful and active</h3>
+      <ul class="how"><li><b>Give one clear next step,</b> with a verb: Donate Now, Apply Now, Make It Happen.</li><li><b>Show what changed.</b> A garden built, a family helped, a mile run.</li><li><b>Invite, don't plead.</b> "Be part of the story."</li></ul></div>
+    <div class="lessmore"><div class="less"><span class="k">Less this</span><p class="line">Please consider supporting our cause if you are able to.</p></div><div class="more"><span class="k">More this</span><p class="line">Take on a challenge. We'll be with you every step.</p></div></div>
+  </div>
+
+  <section class="section">
+    <div class="head"><h2><small>Our words</small>The story vocabulary</h2><div class="text"><p>The brand is a book, so we borrow its words, lightly. About once per page is plenty. Don't force it into forms and buttons ("Submit chapter" ✗).</p></div></div>
+    <div class="words">
+      <div class="col"><h3>Words we love</h3><ul><li>Story</li><li>Chapter</li><li>Written by you</li><li>Legacy</li><li>Together</li><li>Our girl</li><li>Community</li><li>With love</li><li>Make it happen</li><li>Every step of the way</li></ul></div>
+      <div class="col avoid"><h3>Words we avoid</h3><ul><li>Beneficiaries</li><li>Stakeholders</li><li>Tragic</li><li>Leverage</li><li>Impactful</li><li>Click here</li><li>Holistic</li><li>Victims</li></ul></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="head"><h2><small>The small print</small>Mechanics</h2><div class="text"><p>The details that make it all look like one voice.</p></div></div>
+    <div class="mech">
+      <div><b>Our name</b><p>Always "Elsie's Story", with a curly apostrophe in display type. Never "Elsies Story" or "ES".</p></div>
+      <div><b>Headings and buttons</b><p>Title Case, as on the website: "Be Part of the Story", "Donate Now".</p></div>
+      <div><b>Body text</b><p>Sentence case, UK English: colour, organisation, programme.</p></div>
+      <div><b>Numbers</b><p>Numerals for figures (4 projects, £1.2m). Words for one to nine in prose.</p></div>
+      <div><b>Emoji</b><p>None on the website. One heart at most in a social post.</p></div>
+      <div><b>Charity number</b><p>"Registered Charity No: 1210811" on every public page, email and print.</p></div>
+    </div>
+  </section>
+</section>
+
+<!-- ═════════ SCRAPBOOK ═════════ -->
+<section data-view="scrapbook" class="doc wrapx" aria-label="Scrapbook" hidden>
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="#brand">Brand</a> / Scrapbook</nav>
+  <div class="opener">
+    <h1>Scrapbook</h1>
+    <p class="lead">These are the materials every page is built from. They make the brand recognisable from across the room, even before you read a word.</p>
+  </div>
+  <div class="desk" aria-label="A desk scattered with the brand's materials">
+    <div class="note" style="left:4%;top:8%;width:min(40%,460px);--r:-2deg"><p class="hand" style="font-size:40px;line-height:30px;color:var(--ink-deep);margin-bottom:30px">A message from our Founders</p><p style="font-size:16px">What started as something deeply personal has grown into a community united by kindness and action.</p></div>
+    <span class="roid" style="left:47%;top:6%;width:min(22%,250px);--r:4deg"><span class="im"><img src="assets/img/xmas-girl.jpg" alt=""></span><span class="pen">Wear the Story</span></span>
+    <span class="tape" style="left:53%;top:3%;--r:-8deg"></span>
+    <div class="folder" style="right:3%;top:10%;width:min(26%,300px)"><span class="tab">Our Grants</span><div class="body"><div>Supporting individuals and communities when they need it most.</div></div></div>
+    <span class="sticker" style="right:8%;bottom:10%;--s:130px;--r:-10deg"><span>Donate</span></span>
+    <span class="sticker" style="right:21%;bottom:6%;--s:104px;--r:8deg;background:var(--taupe)"><span>Get in touch</span></span>
+    <a class="btn" href="#" onclick="return false" style="left:8%;bottom:16%">Donate Now</a>
+    <img src="assets/img/curly-arrow.svg" alt="" style="left:30%;bottom:26%;width:min(12%,130px);transform:rotate(30deg)">
+    <img src="assets/img/torn-pink-paper.png" alt="" style="left:36%;bottom:4%;width:min(30%,340px);transform:rotate(-3deg)">
+    <span class="hand" style="left:40%;bottom:12%;font-size:clamp(28px,3vw,42px);color:var(--ink-deep);transform:rotate(-3deg)">Be Part of the Story</span>
+    <img src="assets/img/butterfly.webp" alt="" style="left:40%;top:46%;width:min(8%,90px);transform:rotate(14deg)">
+  </div>
+
+  <section class="section" style="margin-top:50px">
+    <div class="head"><h2><small>The materials</small>What's on the desk</h2><div class="text"><p>Each material has a job. Use the right one, and only once or twice per screen.</p></div></div>
+    <div class="mats">
+      <div class="mat"><div class="show" style="padding:0;align-content:start"><div class="spiral" style="width:100%;height:46px;background:linear-gradient(var(--cocoa) 18px,transparent 18px)" data-rings="14"></div><span class="hand" style="font-size:34px;color:var(--ink-deep);margin-top:40px">Page one</span></div><div class="txt"><h3>Spiral binding</h3><p>Across the very top of every page, email header and notebook-style social post. Never as a divider.</p></div></div>
+      <div class="mat"><div class="show"><span class="roid" style="width:170px;--r:-3deg"><span class="im"><img src="assets/img/tshirt.jpg" alt=""></span><span class="pen">Shop Now</span></span></div><div class="txt"><h3>Polaroid</h3><p>A photo with words written underneath. The pen caption is the call to action.</p></div></div>
+      <div class="mat"><div class="show"><div class="note" style="width:86%;--r:1deg;padding:22px 8% 18px"><p style="font-size:15px">Every act of support helps us continue Elsie's legacy.</p><p class="hand" style="font-size:28px;color:var(--ink-deep)">With love,</p></div></div><div class="txt"><h3>Lined note</h3><p>Personal messages from a real person. Once per page, signed in pen.</p></div></div>
+      <div class="mat"><div class="show"><div style="width:90%"><div class="folder"><span class="tab">Policies</span><div class="body"><div>Safeguarding, privacy and more.</div></div></div><div class="folder oat" style="margin-top:-18px;margin-left:auto"><span class="tab">FAQs</span><div class="body"><div>Answers to common questions.</div></div></div></div></div><div class="txt"><h3>File folders</h3><p>For information pages. Taupe and oat, tabs alternating left and right, name in marker.</p></div></div>
+      <div class="mat"><div class="show"><span class="sticker" style="--r:-8deg"><span>Donate</span></span><span class="sticker" style="position:absolute;right:16%;bottom:16%;--s:90px;--r:10deg;background:var(--oat)"><span>New</span></span></div><div class="txt"><h3>Stickers</h3><p>Round shortcuts slapped on top of photos. One or two words in marker capitals.</p></div></div>
+      <div class="mat"><div class="show"><a class="btn" href="#" onclick="return false">Apply Now</a></div><div class="txt"><h3>Sketch button</h3><p>The hand-drawn frame around one call to action per section. It tilts on hover.</p></div></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="head"><h2><small>Tilt</small>Scattered, not messy</h2><div class="text"><p>Objects are dropped on the page, so they sit slightly off-straight. Alternate the direction between neighbours. Text, forms, navigation and the logo always stay straight.</p></div></div>
+    <div class="tilts">
+      <figure><div class="card" style="--r:-1deg"></div><b>1°</b><span>Big sheets and notes</span></figure>
+      <figure><div class="card" style="--r:2deg"></div><b>2°</b><span>Photos and polaroids</span></figure>
+      <figure><div class="card" style="--r:-3deg"></div><b>3°</b><span>Small stickers and scraps</span></figure>
+      <figure><div class="card" style="--r:4deg"></div><b>4°</b><span>The most, only over photos</span></figure>
+      <figure><div class="card" style="--r:0deg"></div><b>0°</b><span>Text, forms and the logo</span></figure>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="head"><h2><small>Depth</small>Paper on a desk</h2><div class="text"><p>Shadows are short and warm, as if each piece is lying flat on the table. Nothing floats or glows.</p></div></div>
+    <div class="shadows">
+      <figure><div class="s" style="box-shadow:3px 3px 5px rgba(0,0,0,.1)"></div><figcaption><b>Photo</b>3px 3px 5px, black at 10%</figcaption></figure>
+      <figure><div class="s" style="box-shadow:1px 2px 2px rgba(55,42,38,.1),3px 5px 8px rgba(55,42,38,.08)"></div><figcaption><b>Card</b>Two short cocoa layers</figcaption></figure>
+      <figure><div class="s" style="box-shadow:var(--shadow-paper)"></div><figcaption><b>Stack</b>Three layers for notes and stacked paper</figcaption></figure>
+      <figure><div class="s" style="box-shadow:var(--shadow-lift)"></div><figcaption><b>Lift</b>Hover only, 0 5px 18px</figcaption></figure>
+    </div>
+  </section>
+</section>
+
+<!-- ═════════ MOTION ═════════ -->
+<section data-view="motion" class="doc wrapx" aria-label="Motion" hidden>
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="#brand">Brand</a> / Motion</nav>
+  <div class="opener">
+    <h1>Motion</h1>
+    <p class="lead">Gentle and story-like. Things get drawn, dropped, counted and lifted, like someone working on a scrapbook. Never fast, never flashy, and switched off for anyone who asks for less motion.</p>
+  </div>
+  <section class="section" style="border-top:0;padding-top:20px">
+    <div class="demos">
+      <div class="demo"><div class="show"><div class="ringdemo play" id="ringdemo"><svg viewBox="0 0 560 112" preserveAspectRatio="none" aria-hidden="true"><path d="M12 52 C 8 20, 120 4, 260 8 S 520 18, 548 48 C 572 82, 470 104, 290 106 S 20 96, 14 62 C 10 40, 60 18, 140 14"/></svg><h4>Our Impact So Far</h4></div></div>
+        <div class="txt"><div class="row"><h3>Draw on</h3><button class="replay" type="button" data-replay="ring">Play again</button></div><p>A blush pen loop draws around a heading as it scrolls into view. One per page.</p><span class="t">1.6s · ease-in-out</span></div></div>
+      <div class="demo"><div class="show"><div class="count" id="count"><div><b data-to="128">0</b><span>Children</span></div><div><b data-to="42">0</b><span>Projects</span></div><div><b data-to="96">0</b><span>Fundraisers</span></div></div></div>
+        <div class="txt"><div class="row"><h3>Count up</h3><button class="replay" type="button" data-replay="count">Play again</button></div><p>Impact numbers count up from zero, then hold. The figures here are only examples.</p><span class="t">1.4s · ease-out · tabular figures</span></div></div>
+      <div class="demo"><div class="show"><p class="loveline">Built on <em>love<span class="hearts" aria-hidden="true"><span style="left:10%;--d:3s;--x:-14px"></span><span style="left:45%;--d:3.4s;--dl:.7s;--x:10px"></span><span style="left:80%;--d:3.1s;--dl:1.4s;--x:16px"></span><span style="left:30%;--d:3.6s;--dl:2.1s;--x:-6px"></span></span></em>, legacy and action.</p></div>
+        <div class="txt"><h3>Drifting hearts</h3><p>Small blush hearts float up from the word "love". Ambient and slow.</p><span class="t">3–3.6s each · staggered by 0.7s</span></div></div>
+      <div class="demo"><div class="show"><div class="liftdemo"><a class="btn btn--sm" href="#" onclick="return false">Sign Up</a><a class="roid" href="#" onclick="return false" style="--r:-3deg"><span class="im"><img src="assets/img/backpack.jpg" alt=""></span><span class="pen">Shop</span></a></div></div>
+        <div class="txt"><h3>Tilt and lift</h3><p>Hover the button: it tilts by 2°. Hover the polaroid: it straightens and lifts.</p><span class="t">0.2s button · 0.35s polaroid</span></div></div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="head"><h2><small>The rules</small>When things move</h2><div class="text"><p>Motion always tells you something: a new section has arrived, a number matters, you can click this. If it doesn't, leave it still.</p></div></div>
+    <div class="tablewrap"><table class="timing">
+      <thead><tr><th>Moment</th><th>What moves</th><th>Timing</th></tr></thead>
+      <tbody>
+        <tr><td>Page load</td><td>The logo is handwritten stroke by stroke (dots and apostrophe added after each word), the butterfly flies in and lands on the E, Charitable Trust stamps in letter by letter, then the rest of the page and the polaroids follow</td><td>About 8.5s, once per visit to Home</td></tr>
+        <tr><td>Section arrives</td><td>Ring draws around the heading, numbers count up</td><td>1.4–1.6s, once</td></tr>
+        <tr><td>Hover</td><td>Buttons tilt, polaroids lift, doodles wiggle</td><td>0.2–0.4s</td></tr>
+        <tr><td>Ambient</td><td>Hearts drift from the word "love"</td><td>3s+, looping, small</td></tr>
+        <tr><td>Celebration</td><td>Confetti after a donation or sign-up, and only then</td><td>Under 2s</td></tr>
+        <tr><td>Reduced motion</td><td>Nothing moves. Show the final state straight away</td><td>0s</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+</section>
+
+<!-- ═════════ BRAND IN USE ═════════ -->
+<section data-view="in-use" class="doc wrapx" aria-label="Brand in use" hidden>
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="#brand">Brand</a> / Brand in Use</nav>
+  <div class="opener">
+    <h1>Brand in Use</h1>
+    <p class="lead">The brand away from the website: candles, hoodies, jumpers designed by children, kit bags and T-shirts. "Wear the Story."</p>
+  </div>
+  <div class="use-grid">
+    <figure class="u-a"><span class="photo" style="--r:-1deg"><img src="assets/img/candle.jpg" alt="Elsie's Story candle and box with pink roses"></span><figcaption><b>Candles</b>The full logo, small and centred, on cream packaging.</figcaption></figure>
+    <figure class="u-b"><span class="photo" style="--r:1deg;aspect-ratio:7/5"><img src="assets/img/xmas-arm.jpg" alt="Children in Christmas jumpers, arms around each other" style="object-position:center 35%"></span><figcaption><b>Christmas Jumper</b>A child's drawing on the back, the handwritten logo on the front.</figcaption></figure>
+    <figure class="u-c"><span class="photo" style="--r:-2deg"><img src="assets/img/tie-dye.jpg" alt="Tie-dye hoodies with the Elsie's Story logo"></span><figcaption><b>Hoodies</b>The white logo on dark or tie-dyed fabric.</figcaption></figure>
+    <figure class="u-d"><span class="photo" style="--r:1.5deg"><img src="assets/img/backpack.jpg" alt="A teal kit bag with the white logo and the name EDDI"></span><figcaption><b>Kit bags</b>The white logo and a name, for fundraisers and teams.</figcaption></figure>
+    <figure class="u-e"><span class="photo" style="--r:-1deg"><img src="assets/img/tshirt.jpg" alt="A cream T-shirt with a hand-drawn butterfly print"></span><figcaption><b>T-shirts</b>Crayon doodles printed big, in brand colours.</figcaption></figure>
+  </div>
+
+  <section class="section" style="margin-top:50px">
+    <div class="head"><h2><small>Templates</small>Social and email</h2><div class="text"><p>Two starting points that hold everything together: paper or blush ground, one polaroid, a handwritten headline of six words or fewer, the butterfly in a corner. Emails open with the binding and close with the cocoa footer.</p></div></div>
+    <div class="mocks">
+      <div class="post" role="img" aria-label="Example square social post">
+        <span class="roid"><span class="im"><img src="assets/img/xmas-star.jpg" alt=""></span><span class="pen">Wear the Story</span></span>
+        <div class="head-hand">Christmas jumpers are back</div>
+        <span class="sticker"><span>Shop now</span></span>
+        <img class="bfly" src="assets/img/butterfly-mark.png" alt="">
+      </div>
+      <div class="email" role="img" aria-label="Example email header and footer">
+        <div class="spiral" data-rings="16"></div>
+        <div class="eh"><img class="logo" src="assets/img/logo.png" alt=""><h3>The Latest News</h3><p>This month: a new community garden, the mini marathon results and how to get your Christmas jumper.</p><span class="btn btn--sm">Read More</span></div>
+        <div class="ef"><span>© 2026 Elsie's Story. Registered Charity No: 1210811.</span><a href="#" onclick="return false">Unsubscribe</a></div>
+      </div>
+    </div>
+  </section>
+</section>
+
+</main>
+
+<footer class="foot wrapx">
+  <div class="in">
+    <div class="row1">
+      <img src="assets/img/logo-white.png" alt="Elsie's Story">
+      <nav aria-label="Brand pages">
+        <a href="#story">Our Story</a><a href="#logo">Logo</a><a href="#colour">Colour</a><a href="#type">Typography</a><a href="#illustration">Illustration</a><a href="#photography">Photography</a><a href="#voice">Tone of Voice</a><a href="#scrapbook">Scrapbook</a><a href="#motion">Motion</a><a href="#in-use">In Use</a>
+      </nav>
+    </div>
+    <div class="legal"><span>© 2026 Elsie's Story. Registered Charity No: 1210811.</span><span>Digital Brand Book · Made with love, in Elsie's name.</span></div>
+  </div>
+</footer>
+
+<script>
+/* Animated logo, written by hand.
+   tools/build_logo.sh deconstructs logo.png pixel by pixel: it thins the handwriting to its centre
+   lines, works out the strokes, orders them as a hand writes (each word in one flowing line,
+   retracing where a pen would, the i's dot and the apostrophe added after the word, the t's
+   downstroke last), times the pen (slower on tight curves) and records the moment the nib reaches
+   every ink pixel. This script replays that recording: each pixel of the real logo is inked at its
+   moment while the nib follows the pen path. The butterfly flies in as the pen finishes and lands
+   on the E, then CHARITABLE TRUST stamps in. Reduced motion shows the finished logo at once. */
+(function () {
+  'use strict';
+  if (!window.ImageData) return;
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var RATE = 1.15, PEN_IN = 350;               /* playback speed of the recorded pen; pause before it starts */
+  var dataP = null;
+
+  function inflate(b64) {
+    if (!window.DecompressionStream) return Promise.reject(new Error('no DecompressionStream'));
+    var bin = atob(b64), u8 = new Uint8Array(bin.length);
+    for (var i = 0; i < bin.length; i++) u8[i] = bin.charCodeAt(i);
+    return new Response(new Blob([u8]).stream().pipeThrough(new DecompressionStream('deflate'))).arrayBuffer();
+  }
+  function loadData() {
+    if (dataP) return dataP;
+    var rec = fetch('assets/logo/logo-write.json').then(function (r) { if (!r.ok) throw new Error('data'); return r.json(); });
+    var img = new Promise(function (ok, no) { var im = new Image(); im.onload = function () { ok(im); }; im.onerror = no; im.src = 'assets/img/logo.png'; });
+    dataP = Promise.all([rec, img]).then(function (a) {
+      return inflate(a[0].map).then(function (buf) { return { rec: a[0], img: a[1], buf: buf }; });
+    });
+    return dataP;
+  }
+  function pct(v, of) { return (v / of * 100) + '%'; }
+  function canvasFrom(data, W, x, y, w, h) {
+    var c = document.createElement('canvas'); c.width = w; c.height = h;
+    var g = c.getContext('2d'), out = g.createImageData(w, h);
+    for (var r = 0; r < h; r++) { var s = ((y + r) * W + x) * 4; out.data.set(data.subarray(s, s + w * 4), r * w * 4); }
+    g.putImageData(out, 0, 0); return c;
+  }
+
+  function mount(box, again) {
+    if (!box) return null;
+    var stage = box.closest('.stage'), nib = box.querySelector('.nib');
+    var L = null, anims = [], timers = [], raf = 0, idle = 0;
+    box.classList.add('js');
+    if (stage && !reduce) stage.classList.add('js-intro');
+    function reveal() { if (stage) stage.classList.add('revealed'); }
+    loadData().then(build).then(run).catch(function () { box.classList.remove('js'); reveal(); });
+
+    function build(D) {
+      var NW = D.rec.w, NH = D.rec.h, S = 2, W = NW * S, H = NH * S, N = W * H;
+      var times = new Uint16Array(D.buf, 0, NW * NH), layer = new Uint8Array(D.buf, NW * NH * 2, NW * NH);
+      var src = document.createElement('canvas'); src.width = W; src.height = H;
+      var g = src.getContext('2d'); g.imageSmoothingEnabled = true; g.imageSmoothingQuality = 'high';
+      g.drawImage(D.img, 0, 0, W, H);
+      var d = g.getImageData(0, 0, W, H).data;
+      var word = new Uint8ClampedArray(N * 4), fly = new Uint8ClampedArray(N * 4), strap = new Uint8ClampedArray(N * 4);
+      var wt = new Uint16Array(N), count = new Uint32Array(65537), nWord = 0, fb = [W, H, 0, 0];
+      /* Where the butterfly's branch crosses the E, redraw the E from its own centre line so it is
+         written clean; the original pixels come back with the butterfly. */
+      var clean = D.rec.clean || [], half = D.rec.half || 6, zone = clean.length ? D.rec.zone : null, near = 0, holes = [];
+      function cleanCover(x, y) {              /* coverage of the E's own stroke at this pixel; sets near */
+        var px = (x + .5) / S, py = (y + .5) / S, best = 1e9;
+        for (var i = 0; i < clean.length; i++) { var dx = clean[i][0] + .5 - px, dy = clean[i][1] + .5 - py, dd = dx * dx + dy * dy; if (dd < best) { best = dd; near = i; } }
+        var c = half + .5 - Math.sqrt(best); return c <= 0 ? 0 : c >= 1 ? 1 : c;
+      }
+      for (var p = 0, o = 0; p < N; p++, o += 4) {
+        var a = d[o + 3]; if (!a) continue;
+        a = (a - 128) * 2.2 + 128; if (a < 4) continue;                 /* crisp edges after upscaling */
+        var x = p % W, y = (p - x) / W, nx = x >> 1, ny = y >> 1, n = ny * NW + nx;
+        if (!layer[n]) {                                               /* soft edge: borrow the nearest inked pixel */
+          var best = -1;
+          for (var k = 0; k < 4 && best < 0; k++) {
+            var mx = nx + (k === 0 ? -1 : k === 1 ? 1 : 0), my = ny + (k === 2 ? -1 : k === 3 ? 1 : 0);
+            if (mx >= 0 && mx < NW && my >= 0 && my < NH && layer[my * NW + mx]) best = my * NW + mx;
+          }
+          if (best < 0) continue; n = best;
+        }
+        var lay = layer[n];
+        var inZone = zone && (layer[n] & 8);
+        if (inZone && (lay & 3) && d[o] - d[o + 1] > 14) lay = 2;          /* pinkish edge of the wing: butterfly only */
+        if (inZone && (lay & 3) && !(d[o] - d[o + 1] > 22 && d[o] > 140)) {
+          /* where the branch crosses the E: the E from its own smooth stroke, the butterfly gets the rest */
+          var cov = cleanCover(x, y), wa = Math.round(255 * cov), fa = Math.round(a * (1 - cov));
+          if (wa > 0) { word[o] = d[o]; word[o + 1] = d[o + 1]; word[o + 2] = d[o + 2]; word[o + 3] = wa;
+            wt[p] = (clean[near][2] || 0) + 1; count[wt[p]]++; nWord++; }
+          if (fa > 0) { fly[o] = d[o]; fly[o + 1] = d[o + 1]; fly[o + 2] = d[o + 2]; fly[o + 3] = fa;
+            if (x < fb[0]) fb[0] = x; if (y < fb[1]) fb[1] = y; if (x > fb[2]) fb[2] = x; if (y > fb[3]) fb[3] = y; }
+          if (cov > .05) holes.push(p, cov);
+          continue;
+        }
+        if (lay & 1) { word[o] = d[o]; word[o + 1] = d[o + 1]; word[o + 2] = d[o + 2]; word[o + 3] = a; wt[p] = times[n] || 1; count[wt[p]]++; nWord++; }
+        if (lay & 2) { fly[o] = d[o]; fly[o + 1] = d[o + 1]; fly[o + 2] = d[o + 2]; fly[o + 3] = a;
+          if (x < fb[0]) fb[0] = x; if (y < fb[1]) fb[1] = y; if (x > fb[2]) fb[2] = x; if (y > fb[3]) fb[3] = y; }
+        if (lay & 4) { strap[o] = d[o]; strap[o + 1] = d[o + 1]; strap[o + 2] = d[o + 2]; strap[o + 3] = a; }
+      }
+      /* the E sat on top of the wing and branch: fill the butterfly where the E covered it, from the
+         butterfly around it, but only where the surroundings really are butterfly */
+      var R = Math.ceil((half + 2) * S), RAYS = 24, cosA = [], sinA = [];
+      for (var k2 = 0; k2 < RAYS; k2++) { cosA.push(Math.cos(k2 / RAYS * 6.2832)); sinA.push(Math.sin(k2 / RAYS * 6.2832)); }
+      var holeSet = new Uint8Array(N);
+      for (var hI = 0; hI < holes.length; hI += 2) holeSet[holes[hI]] = 1;
+      for (hI = 0; hI < holes.length; hI += 2) {
+        var hp = holes[hI], hx = hp % W, hy = (hp - hx) / W, hits = 0, bestD = 1e9, bestQ = -1;
+        for (k2 = 0; k2 < RAYS; k2++) {
+          for (var step = 2; step <= R; step++) {
+            var qx = Math.round(hx + cosA[k2] * step), qy = Math.round(hy + sinA[k2] * step);
+            if (qx < 0 || qy < 0 || qx >= W || qy >= H) break;
+            var q = qy * W + qx;
+            if (fly[q * 4 + 3] > 150 && !holeSet[q]) { hits++; if (step < bestD) { bestD = step; bestQ = q; } break; }
+          }
+        }
+        if (hits >= 6 && bestQ >= 0) {
+          var ho = hp * 4, qo = bestQ * 4, keep = fly[ho + 3];
+          fly[ho] = fly[qo]; fly[ho + 1] = fly[qo + 1]; fly[ho + 2] = fly[qo + 2]; fly[ho + 3] = Math.max(keep, fly[qo + 3]);
+          if (hx < fb[0]) fb[0] = hx; if (hy < fb[1]) fb[1] = hy; if (hx > fb[2]) fb[2] = hx; if (hy > fb[3]) fb[3] = hy;
+        }
+      }
+      /* pixels of the handwriting in the order the nib reaches them (counting sort on time) */
+      var startAt = new Uint32Array(65537), sum = 0;
+      for (var c = 0; c < 65537; c++) { startAt[c] = sum; sum += count[c]; }
+      var order = new Int32Array(nWord);
+      for (p = 0; p < N; p++) if (wt[p]) order[startAt[wt[p]]++] = p;
+
+      var wc = document.createElement('canvas'); wc.width = W; wc.height = H; wc.className = 'word';
+      var wctx = wc.getContext('2d'), wimg = wctx.createImageData(W, H);
+      box.appendChild(wc);
+
+      var fx = fb[0], fy = fb[1], fw = fb[2] - fb[0] + 1, fh = fb[3] - fb[1] + 1;
+      var flyEl = document.createElement('span'); flyEl.className = 'fly';
+      flyEl.style.left = pct(fx, W); flyEl.style.top = pct(fy, H); flyEl.style.width = pct(fw, W); flyEl.style.height = pct(fh, H);
+      var flap = document.createElement('span'); flap.className = 'flap';
+      flap.style.transformOrigin = pct(168 * S * NW / 1000 - fx, fw) + ' 55%';     /* hinge on the body */
+      flap.appendChild(canvasFrom(fly, W, fx, fy, fw, fh));
+      flyEl.appendChild(flap); box.appendChild(flyEl);
+
+      /* CHARITABLE TRUST, split into letters at the gaps between them */
+      var colInk = new Uint32Array(W), top = H, bot = 0;
+      for (y = 0; y < H; y++) for (x = 0; x < W; x++) if (strap[(y * W + x) * 4 + 3]) { colInk[x]++; if (y < top) top = y; if (y > bot) bot = y; }
+      var segs = [], st = -1, gap = 0;
+      for (c = 0; c <= W; c++) {
+        if (c < W && colInk[c] > 0) { if (st < 0) st = c; gap = 0; }
+        else if (st >= 0 && ++gap > 3 * S) { segs.push([st, c - gap + 1]); st = -1; gap = 0; }
+      }
+      var letters = segs.map(function (s) {
+        var x0 = Math.max(0, s[0] - 2), x1 = Math.min(W, s[1] + 2), hh = bot - top + 3;
+        var el = document.createElement('span'); el.className = 'letter';
+        el.style.left = pct(x0, W); el.style.top = pct(top - 1, H); el.style.width = pct(x1 - x0, W); el.style.height = pct(hh, H);
+        el.appendChild(canvasFrom(strap, W, x0, top - 1, x1 - x0, hh)); box.appendChild(el); return el;
+      });
+
+      L = { W: W, H: H, word: word, order: order, wt: wt, n: nWord, ptr: 0, wctx: wctx, wimg: wimg,
+            fly: flyEl, flap: flap, letters: letters, pen: D.rec.pen, total: D.rec.total, pi: 0 };
+    }
+
+    /* ink every pixel the nib has reached by time T (ms of the recording) */
+    function inkTo(T) {
+      var o = L.order, wt = L.wt, src = L.word, dst = L.wimg.data, W = L.W;
+      var x0 = W, y0 = L.H, x1 = -1, y1 = -1;
+      while (L.ptr < L.n && wt[o[L.ptr]] <= T) {
+        var p = o[L.ptr++], q = p * 4, x = p % W, y = (p - x) / W;
+        dst[q] = src[q]; dst[q + 1] = src[q + 1]; dst[q + 2] = src[q + 2]; dst[q + 3] = src[q + 3];
+        if (x < x0) x0 = x; if (x > x1) x1 = x; if (y < y0) y0 = y; if (y > y1) y1 = y;
+      }
+      if (x1 >= 0) L.wctx.putImageData(L.wimg, 0, 0, x0, y0, x1 - x0 + 1, y1 - y0 + 1);
+    }
+    function clearInk() { L.wimg.data.fill(0); L.wctx.clearRect(0, 0, L.W, L.H); L.ptr = 0; L.pi = 0; }
+    function moveNib(T) {
+      var pen = L.pen, i = L.pi;
+      while (i < pen.length - 2 && pen[i + 1][0] <= T) i++;
+      L.pi = i;
+      var a = pen[i], b = pen[Math.min(i + 1, pen.length - 1)], k = b[0] > a[0] ? Math.min(1, Math.max(0, (T - a[0]) / (b[0] - a[0]))) : 0;
+      nib.style.left = ((a[1] + (b[1] - a[1]) * k) * 100) + '%';
+      nib.style.top = ((a[2] + (b[2] - a[2]) * k) * 100) + '%';
+      nib.classList.toggle('up', !(a[3] && b[3]));
+    }
+
+    function later(fn, ms) { timers.push(setTimeout(fn, ms)); }
+    function play(el, frames, opts) { var an = el.animate(frames, opts); anims.push(an); return an; }
+    function flutter(times, speed, delay) {
+      return play(L.flap, [{ transform: 'rotateY(0deg)' }, { transform: 'rotateY(66deg) rotateX(8deg)' }],
+        { duration: speed, iterations: times, direction: 'alternate', easing: 'ease-in-out', delay: delay || 0 });
+    }
+    function puff() {
+      for (var i = 0; i < 6; i++) {
+        var hrt = document.createElement('span'); hrt.className = 'puff';
+        var fl = L.fly.style;
+        hrt.style.left = 'calc(' + fl.left + ' + ' + fl.width + ' * .62)'; hrt.style.top = 'calc(' + fl.top + ' + ' + fl.height + ' * .55)';
+        box.appendChild(hrt);
+        var ang = (-150 + i * 26) * Math.PI / 180, dist = 40 + Math.random() * 30;
+        play(hrt, [{ transform: 'translate(0,0) rotate(45deg) scale(.2)', opacity: 0 }, { opacity: 1, offset: .25 },
+          { transform: 'translate(' + Math.cos(ang) * dist + 'px,' + (Math.sin(ang) * dist - 30) + 'px) rotate(45deg) scale(' + (.6 + Math.random() * .5) + ')', opacity: 0 }],
+          { duration: 1100 + i * 60, easing: 'cubic-bezier(.2,.7,.3,1)', fill: 'forwards' });
+      }
+    }
+    function stop() {
+      anims.forEach(function (an) { an.cancel(); }); anims = [];
+      timers.forEach(clearTimeout); timers = []; cancelAnimationFrame(raf); clearTimeout(idle); idle = 0;
+      nib.style.opacity = ''; nib.classList.remove('up');
+      box.querySelectorAll('.puff').forEach(function (h) { h.remove(); });
+    }
+
+    function run() {
+      if (!L) return;
+      stop();
+      if (reduce) { inkTo(65535); reveal(); return; }
+      clearInk();
+      var writeEnd = PEN_IN + L.total / RATE, flyAt = writeEnd - 900, landAt = flyAt + 2300;
+
+      /* 1 · the pen writes the name, stroke by stroke */
+      var t0 = performance.now();
+      nib.style.opacity = 0;
+      (function frame(now) {
+        var T = (now - t0 - PEN_IN) * RATE;
+        if (T >= 0) { nib.style.opacity = 1; inkTo(T); moveNib(T); }
+        if (T < L.total) raf = requestAnimationFrame(frame);
+        else { inkTo(65535); nib.style.opacity = 0; }
+      })(t0);
+
+      /* 2 · as the pen finishes, the butterfly flies in and lands on the E */
+      play(L.fly, [
+        { transform: 'translate(-260%,170%) rotate(-28deg) scale(.5)', opacity: 0, offset: 0 },
+        { transform: 'translate(-215%,115%) rotate(-12deg) scale(.6)', opacity: 1, offset: .14 },
+        { transform: 'translate(-150%,150%) rotate(14deg) scale(.7)', offset: .36 },
+        { transform: 'translate(-75%,40%) rotate(-10deg) scale(.82)', offset: .6 },
+        { transform: 'translate(-16%,-24%) rotate(8deg) scale(1.04)', offset: .86 },
+        { transform: 'translate(0,0) rotate(0deg) scale(1)', opacity: 1, offset: 1 }
+      ], { duration: 2300, delay: flyAt, easing: 'cubic-bezier(.45,.05,.35,1)', fill: 'both' });
+      var flying = flutter(Infinity, 130, flyAt);
+      later(function () {
+        flying.cancel(); puff(); flutter(4, 380);
+        /* then it flutters every few seconds: three wing beats, at a slightly random interval */
+        (function rest(wait) { idle = setTimeout(function () { flutter(6, 170); rest(3500 + Math.random() * 2000); }, wait); })(3000);
+      }, landAt);
+
+      /* 3 · CHARITABLE TRUST stamps in, letter by letter, and the page follows */
+      L.letters.forEach(function (el, i) {
+        var tilt = (i % 2 ? 1 : -1) * (6 + (i % 3) * 3);
+        play(el, [
+          { transform: 'translateY(40%) scale(.3) rotate(' + tilt + 'deg)', opacity: 0 },
+          { transform: 'translateY(-8%) scale(1.12) rotate(' + (-tilt / 3) + 'deg)', opacity: 1, offset: .6 },
+          { transform: 'none', opacity: 1 }
+        ], { duration: 520, delay: landAt - 200 + i * 75, easing: 'cubic-bezier(.3,1.3,.5,1)', fill: 'both' });
+      });
+      later(reveal, landAt + 300);
+    }
+
+    box.addEventListener('mouseenter', function () { if (L && !reduce && idle) flutter(6, 150); });
+    box.addEventListener('click', run);
+    if (again) again.addEventListener('click', run);
+    return run;
+  }
+  window.esLogoMount = mount;
+  window.esLogoRun = mount(document.getElementById('logoAnim'), document.getElementById('logoAgain'));
+})();
+</script>
+<script>
+(function () {
+  'use strict';
+  var VIEWS = ['home', 'brand', 'story', 'logo', 'colour', 'type', 'illustration', 'photography', 'voice', 'scrapbook', 'motion', 'in-use'];
+
+  /* Spiral rings: enough to fill the width at about one per 34px. */
+  function fillRings(el, n) { el.innerHTML = ''; for (var i = 0; i < n; i++) el.appendChild(document.createElement('i')); }
+  var topSpiral = document.getElementById('spiral');
+  function sizeTop() { fillRings(topSpiral, Math.max(10, Math.round(innerWidth / 34))); }
+  sizeTop(); addEventListener('resize', sizeTop);
+  document.querySelectorAll('[data-rings]').forEach(function (el) { fillRings(el, +el.dataset.rings); });
+
+  /* Router: one view at a time, chosen by the hash. */
+  function show() {
+    var id = (location.hash || '').replace('#', '') || 'home';
+    if (VIEWS.indexOf(id) < 0) id = 'home';
+    document.querySelectorAll('[data-view]').forEach(function (v) { v.hidden = v.dataset.view !== id; });
+    document.querySelectorAll('[data-nav]').forEach(function (a) {
+      var on = a.dataset.nav === id || (a.dataset.nav === 'brand' && id !== 'home');
+      if (on) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current');
+    });
+    window.scrollTo(0, 0);
+    if (id === 'brand') lightFirst();
+    if (id === 'motion') { replay('ring'); replay('count'); }
+    if (id === 'home' && window.esLogoRun) window.esLogoRun();
+    if (id === 'logo' && window.esLogoMount) {
+      if (window.esLogoRun2) window.esLogoRun2();
+      else window.esLogoRun2 = window.esLogoMount(document.getElementById('logoAnim2'), document.getElementById('logoAgain2'));
+    }
+  }
+  addEventListener('hashchange', show);
+
+  /* Brand grid: one tile lit at a time, like wise.design. Mouse: the tile under the pointer.
+     Touch: the tile nearest the middle of the screen. */
+  var tiles = [].slice.call(document.querySelectorAll('.tile'));
+  var mouse = matchMedia('(hover: hover) and (pointer: fine)').matches;
+  function light(t) { tiles.forEach(function (x) { x.classList.toggle('is-lit', x === t); }); }
+  function nearest() {
+    if (mouse || document.querySelector('[data-view="brand"]').hidden) return;
+    var mid = innerHeight / 2, best = null, bd = Infinity;
+    tiles.forEach(function (t) { var r = t.getBoundingClientRect(), d = Math.abs(r.top + r.height / 2 - mid); if (d < bd) { bd = d; best = t; } });
+    light(best);
+  }
+  function lightFirst() { if (mouse) light(tiles[0]); else nearest(); }
+  tiles.forEach(function (t) {
+    t.addEventListener('pointerenter', function (e) { if (e.pointerType === 'mouse') light(t); });
+    t.addEventListener('focus', function () { light(t); });
+  });
+  addEventListener('scroll', nearest, { passive: true });
+
+  /* Colour chips */
+  /* [name, hex, rgb, token, role, tilt, tag] — the brand palette in the order of the palette sheet */
+  var CHIPS = [
+    ['Ink', '#796867', '121 104 103', 'ink', 'All text, headings, nav and outlines on paper and white.', -1],
+    ['Taupe', '#D6CAC1', '214 202 193', 'taupe', 'File folders and quiet panels. Write on it in cocoa (5.28:1).', 1.5, 'Racer colour option'],
+    ['Lilac', '#E8D8E3', '232 216 227', 'lilac', 'A soft cool tint for backgrounds, cards and social grounds. Write on it in cocoa (6.2:1).', -1.5],
+    ['Blush', '#EFBCC8', '239 188 200', 'blush', 'Hearts, stickers and the butterfly. Write on it in cocoa (5.12:1).', 2],
+    ['Paper Grey', '#F2F1EB', '242 241 235', 'paper-grey', 'Inside folders and recycled-paper sheets. Ink passes on it (4.65:1).', -1, 'Racer colour option'],
+    ['Oat', '#E6D5C0', '230 213 192', 'oat', 'Alternate folders and the "Who We’ve Helped" ground. Write on it in cocoa (5.91:1).', 1],
+    ['Clay', '#D4A395', '212 163 149', 'clay', 'A warm accent for illustration, products and blocks of colour. Not for body text: cocoa on clay is only 3.82:1, so headings 24px and over only.', -2],
+    ['White', '#FFFFFF', '255 255 255', 'white', 'Polaroid frames, cards and notepaper. Ink on white is 5.26:1.', 1.5],
+    ['Pale Blush', '#E6BCC6', '230 188 198', 'pale-blush', 'Our signature pink: highlights, form focus and pink grounds. Write on it in cocoa (4.99:1), not ink.', -1, 'Our most used pink']
+  ];
+  var WEB = [
+    ['Cocoa', '#574A48', '87 74 72', 'cocoa', 'The footer, the newsletter envelope and text on every pink and tint.', 1],
+    ['Rose', '#AC2D4B', '172 45 75', 'rose', 'Tiny accents only: focus rings, the word "love" and form errors.', -1.5]
+  ];
+  var LIGHT = ['Paper', 'Paper Grey', 'White'];
+  function addChips(list, holder) {
+    list.forEach(function (c) {
+      var b = document.createElement('button');
+      b.type = 'button'; b.className = 'chip'; b.style.setProperty('--c', c[1]); b.style.setProperty('--r', c[5] + 'deg');
+      b.setAttribute('aria-label', 'Copy ' + c[0] + ' ' + c[1]);
+      b.innerHTML = '<span class="sw' + (LIGHT.indexOf(c[0]) >= 0 ? ' edge' : '') + '"></span><span class="meta">' + (c[6] ? '<span class="tag">' + c[6] + '</span>' : '') + '<b>' + c[0] + '</b><span class="v">' + c[1] + ' · RGB ' + c[2] + '</span><span class="v" style="color:var(--rose)">--' + c[3] + '</span><span class="role">' + c[4] + '</span><span class="ok" aria-live="polite"></span></span>';
+      b.addEventListener('click', function () {
+        var ok = b.querySelector('.ok');
+        function done(msg) { ok.textContent = msg; setTimeout(function () { ok.textContent = ''; }, 1600); }
+        try { navigator.clipboard.writeText(c[1]).then(function () { done('Copied ' + c[1]); }, function () { done('Copy ' + c[1] + ' by hand'); }); }
+        catch (e) { done('Copy ' + c[1] + ' by hand'); }
+      });
+      holder.appendChild(b);
+    });
+  }
+  addChips(CHIPS, document.getElementById('chips'));
+  addChips(WEB, document.getElementById('chips-web'));
+
+  /* Contrast pairings */
+  var PAIRS = [
+    ['var(--white)', 'var(--ink)', 'Ink on white', '5.26', true],
+    ['var(--paper-grey)', 'var(--ink)', 'Ink on paper grey', '4.65', true],
+    ['var(--blush)', 'var(--ink-deep)', 'Cocoa on blush', '5.12', true],
+    ['var(--oat)', 'var(--ink-deep)', 'Cocoa on oat', '5.91', true],
+    ['var(--taupe)', 'var(--ink-deep)', 'Cocoa on taupe', '5.28', true],
+    ['var(--pale-blush)', 'var(--ink-deep)', 'Cocoa on pale blush', '4.99', true],
+    ['var(--lilac)', 'var(--ink-deep)', 'Cocoa on lilac', '6.20', true],
+    ['var(--clay)', 'var(--ink-deep)', 'Cocoa on clay', '3.82', 'large'],
+    ['var(--cocoa)', 'var(--white)', 'White on cocoa', '8.47', true],
+    ['var(--cocoa)', 'var(--blush)', 'Blush on cocoa', '5.12', true],
+    ['var(--rose)', 'var(--white)', 'White on rose', '6.50', true],
+    ['var(--blush)', 'var(--ink)', 'Ink on blush', '3.18', false],
+    ['var(--taupe)', 'var(--ink)', 'Ink on taupe', '3.28', false],
+    ['var(--white)', 'var(--pale-blush)', 'Pale blush text on white', '1.70', false],
+    ['var(--cocoa)', 'var(--rose)', 'Rose on cocoa', '1.32', false]
+  ];
+  var pairs = document.getElementById('pairs');
+  PAIRS.forEach(function (p) {
+    var d = document.createElement('div');
+    d.className = 'pair'; d.style.background = p[0]; d.style.color = p[1];
+    d.innerHTML = '<div class="aa"><i>Be Part of the Story</i>Donate Now</div><div class="r"><span>' + p[2] + '</span><span class="badge' + (p[4] === true ? '' : ' fail') + '">' + p[3] + ' · ' + (p[4] === true ? 'AA ✓' : p[4] === 'large' ? '24px+ only' : 'Fails ✗') + '</span></div>';
+    pairs.appendChild(d);
+  });
+
+  /* Logo plates: paper or cocoa */
+  document.querySelectorAll('.part').forEach(function (part) {
+    var plate = part.querySelector('.plate'), img = plate.querySelector('img');
+    part.querySelectorAll('.toggle button').forEach(function (b) {
+      b.addEventListener('click', function () {
+        var dark = b.dataset.bg === 'dark';
+        plate.classList.toggle('dark', dark);
+        img.src = dark ? part.dataset.dark : part.dataset.light;
+        part.querySelectorAll('.toggle button').forEach(function (x) { x.setAttribute('aria-pressed', String(x === b)); });
+      });
+    });
+  });
+
+  /* Motion demos */
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function replay(which) {
+    if (which === 'ring') { var r = document.getElementById('ringdemo'); r.classList.remove('play'); void r.offsetWidth; r.classList.add('play'); }
+    if (which === 'count') {
+      document.querySelectorAll('#count b').forEach(function (b) {
+        var to = +b.dataset.to;
+        if (reduce) { b.textContent = to; return; }
+        var t0 = performance.now();
+        (function step(now) { var k = Math.min(1, (now - t0) / 1400); b.textContent = Math.round(to * (1 - Math.pow(1 - k, 3))); if (k < 1) requestAnimationFrame(step); })(t0);
+      });
+    }
+  }
+  document.querySelectorAll('[data-replay]').forEach(function (b) { b.addEventListener('click', function () { replay(b.dataset.replay); }); });
+
+  /* Font downloads. In the published artifact, plain download links are blocked, so the file
+     goes through the viewer's own save prompt. Anywhere else (a local server, a static host)
+     the link downloads as normal. */
+  var saver = null;
+  if (window.claude && claude.use) claude.use('downloads').then(function (d) { saver = d; }, function () {});
+  var note = document.getElementById('dl-note'), noteText = note.textContent;
+  function say(msg) { note.textContent = msg; setTimeout(function () { note.textContent = noteText; }, 4000); }
+  document.querySelectorAll('.dl').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      if (!saver) return;
+      e.preventDefault();
+      a.setAttribute('aria-busy', 'true');
+      fetch(a.getAttribute('href')).then(function (r) { if (!r.ok) throw new Error('fetch'); return r.blob(); })
+        .then(function (blob) { return saver.save({ filename: a.dataset.file, data: blob }); })
+        .then(function () { say(a.dataset.file + ' saved. Open it to install.'); },
+              function (err) {
+                var code = err && err.code;
+                if (code === 'declined') return;
+                say(code === 'rate_limited' ? 'A save is already waiting for you. Finish that one first.' : 'This view can’t save files. Open the Digital Brand Book in claude.ai or ask the team for ' + a.dataset.file + '.');
+              })
+        .then(function () { a.removeAttribute('aria-busy'); });
+    });
+  });
+
+  show();
+})();
+</script>
