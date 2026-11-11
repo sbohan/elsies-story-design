@@ -24,6 +24,7 @@ Then open http://127.0.0.1:8792/index.html.
 
 | Name | Hex | Notes |
 | --- | --- | --- |
+| Pale Blush | `#E6BCC6` | our Elsie pink, the one we use most |
 | Ink | `#796867` | |
 | Taupe | `#D6CAC1` | racer colour option |
 | Lilac | `#E8D8E3` | |
@@ -32,6 +33,5 @@ Then open http://127.0.0.1:8792/index.html.
 | Oat | `#E6D5C0` | |
 | Clay | `#D4A395` | |
 | White | `#FFFFFF` | |
-| Pale Blush | `#E6BCC6` | our most used pink |
 
-Supporting colours: Cocoa `#574A48` and Rose `#AC2D4B`.
+Supporting colours: Cocoa `#574A48` and Dusky Pink `#9A5568` (small labels and accents; we stay away from red).

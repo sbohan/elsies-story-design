@@ -22,7 +22,7 @@
   --cocoa-deep: #3f3534;
   --ink: #796867;
   --ink-deep: #574a48;
-  --rose: #ac2d4b;
+  --dusk: #9a5568;
   --blush: #efbcc8;
   --pale-blush: #e6bcc6;
   --oat: #e6d5c0;
@@ -60,7 +60,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 img { max-width: 100%; display: block; }
 a { color: inherit; }
 ::selection { background: var(--blush); color: var(--ink-deep); }
-:focus-visible { outline: 3px solid var(--rose); outline-offset: 3px; }
+:focus-visible { outline: 3px solid var(--dusk); outline-offset: 3px; }
 h1, h2, h3 { text-wrap: balance; }
 .wrapx { padding-left: max(var(--edge), env(safe-area-inset-left, 0px)); padding-right: max(var(--edge), env(safe-area-inset-right, 0px)); }
 @media (max-width: 720px) { :root { --edge: 16px; --top: 92px; } }
@@ -74,7 +74,7 @@ h1, h2, h3 { text-wrap: balance; }
 .bar .home { justify-self: start; display: block; }
 .bar .home { display: flex; align-items: center; gap: 14px; text-decoration: none; }
 .bar .home img { height: 46px; width: auto; }
-.bar .home .bb { padding-left: 14px; border-left: 1px dashed var(--rule); font: 400 15px/1.1 var(--marker); letter-spacing: .05em; text-transform: uppercase; color: var(--rose); white-space: nowrap; }
+.bar .home .bb { padding-left: 14px; border-left: 1px dashed var(--rule); font: 400 15px/1.1 var(--marker); letter-spacing: .05em; text-transform: uppercase; color: var(--dusk); white-space: nowrap; }
 .seg { display: flex; gap: 2px; padding: 3px; background: var(--paper-grey); box-shadow: inset 0 0 0 1px var(--rule); }
 .seg a { padding: 7px 18px; font-size: 15px; line-height: 20px; text-decoration: none; color: var(--ink); transition: background-color .2s, color .2s; }
 .seg a:hover { color: var(--ink-deep); background: var(--white); }
@@ -90,12 +90,12 @@ main { min-height: 70vh; padding-top: var(--top); }
 /* ── Shared bits ───────────────────────────────────── */
 .hand { font-family: var(--hand); font-weight: 400; }
 .marker { font-family: var(--marker); font-weight: 400; }
-.kicker { font-family: var(--marker); font-size: 17px; letter-spacing: .04em; text-transform: uppercase; color: var(--rose); }
+.kicker { font-family: var(--marker); font-size: 17px; letter-spacing: .04em; text-transform: uppercase; color: var(--dusk); }
 .btn { position: relative; display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 60px; min-width: 220px; padding: 0 34px; font: 600 22px/1 var(--sans); color: var(--ink); text-decoration: none; border: 0; cursor: pointer; background: url("assets/img/sketch-frame.png") center / 100% 100% no-repeat; transition: transform .2s ease; }
 .btn:hover { transform: rotate(-2deg); color: var(--ink-deep); }
 .btn--sm { min-height: 46px; min-width: 150px; font-size: 17px; padding: 0 22px; }
 .tl { text-decoration: underline; text-underline-offset: 6px; text-decoration-thickness: 1px; }
-.tl:hover { text-decoration-thickness: 2px; color: var(--rose); }
+.tl:hover { text-decoration-thickness: 2px; color: var(--dusk); }
 .roid { display: block; background: var(--white); padding: 12px 12px 0; box-shadow: var(--shadow-photo); transform: rotate(var(--r, 0deg)); transition: transform .35s ease, box-shadow .35s ease; color: var(--ink); text-decoration: none; }
 .roid .im { display: block; position: relative; aspect-ratio: 1 / 1; overflow: hidden; background: var(--paper-grey); }
 .roid .im img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
@@ -136,7 +136,7 @@ main { min-height: 70vh; padding-top: var(--top); }
 .logo-anim .puff::before, .logo-anim .puff::after { content: ""; position: absolute; width: 10px; height: 10px; border-radius: 50%; background: inherit; }
 .logo-anim .puff::before { left: -5px; } .logo-anim .puff::after { top: -5px; }
 .stage .again { font: 500 14px/1 var(--sans); color: var(--ink); background: none; border: 0; padding: 8px 4px; cursor: pointer; opacity: 0; animation: fade .8s 5.6s forwards; }
-.stage .again:hover { color: var(--rose); text-decoration: underline; text-underline-offset: 4px; }
+.stage .again:hover { color: var(--dusk); text-decoration: underline; text-underline-offset: 4px; }
 /* While the logo is being written the rest of the welcome page waits, then follows on */
 .stage.js-intro:not(.revealed) .bbk, .stage.js-intro:not(.revealed) .sub, .stage.js-intro:not(.revealed) .btn,
 .stage.js-intro:not(.revealed) .again, .stage.js-intro:not(.revealed) .scatter { animation: none; opacity: 0; }
@@ -144,7 +144,7 @@ main { min-height: 70vh; padding-top: var(--top); }
 .stage.revealed .btn { animation-delay: .6s; } .stage.revealed .again { animation-delay: 1.3s; }
 .stage.revealed .scatter.s1 { animation-delay: .5s; } .stage.revealed .scatter.s2 { animation-delay: .65s; }
 .stage.revealed .scatter.s3 { animation-delay: .8s; } .stage.revealed .scatter.s4 { animation-delay: .95s; }
-.stage .bbk { margin: 6px 0 0; font: 400 clamp(20px, 2.2vw, 28px)/1 var(--marker); letter-spacing: .08em; text-transform: uppercase; color: var(--rose); opacity: 0; animation: fade .8s 4.3s forwards; }
+.stage .bbk { margin: 6px 0 0; font: 400 clamp(20px, 2.2vw, 28px)/1 var(--marker); letter-spacing: .08em; text-transform: uppercase; color: var(--dusk); opacity: 0; animation: fade .8s 4.3s forwards; }
 .stage .sub { margin: 0; font-size: clamp(18px, 1.8vw, 22px); max-width: 34ch; opacity: 0; animation: fade .8s 4.6s forwards; }
 .stage .sub b { font-weight: 600; }
 .stage .btn { opacity: 0; animation: fade .8s 4.9s forwards; font: 400 26px/1 var(--marker); letter-spacing: .04em; color: var(--ink-deep); padding: 4px 40px 0; min-height: 66px; }
@@ -188,7 +188,7 @@ main { min-height: 70vh; padding-top: var(--top); }
 .t-photo   { --bg: var(--cocoa); --fg: var(--white); }
 .t-voice   { --bg: var(--paper-grey); }
 .t-scrap   { --bg: var(--oat); }
-.t-motion  { --bg: var(--rose); --fg: var(--white); }
+.t-motion  { --bg: var(--dusk); --fg: var(--white); }
 .t-use     { --bg: var(--taupe); }
 
 /* ── Doc pages ─────────────────────────────────────── */
@@ -202,7 +202,7 @@ main { min-height: 70vh; padding-top: var(--top); }
 .section { padding-block: 70px; border-top: 1px dashed var(--rule); }
 .head { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 40px; margin-bottom: 40px; }
 .head h2 { margin: 0; font: 400 clamp(40px, 4.6vw, 64px)/.95 var(--hand); color: var(--ink-deep); }
-.head h2 small { display: block; margin-bottom: 10px; font: 400 16px/1 var(--marker); letter-spacing: .05em; text-transform: uppercase; color: var(--rose); }
+.head h2 small { display: block; margin-bottom: 10px; font: 400 16px/1 var(--marker); letter-spacing: .05em; text-transform: uppercase; color: var(--dusk); }
 .head .text { max-width: 62ch; min-width: 0; }
 .head .text p { margin: 0 0 14px; }
 @media (max-width: 860px) { .head { grid-template-columns: 1fr; gap: 14px; } }
@@ -217,25 +217,25 @@ main { min-height: 70vh; padding-top: var(--top); }
 .dd figure { margin: 0; }
 .dd figcaption { margin-top: 14px; font-size: 16px; }
 .dd figcaption b { display: block; font: 400 26px/1 var(--hand); margin-bottom: 4px; }
-.yes b { color: var(--ink-deep); } .no b { color: var(--rose); }
+.yes b { color: var(--ink-deep); } .no b { color: var(--dusk); }
 .xmark { position: absolute; inset: 0; pointer-events: none; }
-.xmark path { fill: none; stroke: var(--rose); stroke-width: 6; stroke-linecap: round; opacity: .85; }
+.xmark path { fill: none; stroke: var(--dusk); stroke-width: 6; stroke-linecap: round; opacity: .85; }
 
 /* ── Story ─────────────────────────────────────────── */
 .pillars { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 30px; }
 @media (max-width: 900px) { .pillars { grid-template-columns: 1fr; } }
 .pillar { padding: 30px 28px 32px; background: var(--white); box-shadow: var(--shadow-paper); transform: rotate(var(--r)); }
 .pillar .word { font: 400 72px/1 var(--hand); color: var(--ink-deep); }
-.pillar .word em { font-style: normal; color: var(--rose); }
+.pillar .word em { font-style: normal; color: var(--dusk); }
 .pillar p { margin: 12px 0 0; }
 .pillar .see { margin-top: 18px; padding-top: 14px; border-top: 1px dashed var(--rule); font-size: 15px; }
-.pillar .see b { font-family: var(--marker); font-weight: 400; letter-spacing: .04em; text-transform: uppercase; font-size: 14px; color: var(--rose); display: block; margin-bottom: 4px; }
+.pillar .see b { font-family: var(--marker); font-weight: 400; letter-spacing: .04em; text-transform: uppercase; font-size: 14px; color: var(--dusk); display: block; margin-bottom: 4px; }
 .manifesto { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 60px; align-items: center; }
 @media (max-width: 900px) { .manifesto { grid-template-columns: 1fr; } }
 .manifesto .note { font-size: 19px; }
 .manifesto .sign { font: 400 40px/1 var(--hand); color: var(--ink-deep); }
 .big-quote { margin: 0; font: 400 clamp(40px, 5vw, 76px)/1 var(--hand); color: var(--ink-deep); }
-.big-quote span { color: var(--rose); }
+.big-quote span { color: var(--dusk); }
 .pathways { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 34px; }
 @media (max-width: 900px) { .pathways { grid-template-columns: 1fr; max-width: 360px; } }
 .pathways .card { background: var(--white); padding: 18px 20px 20px; box-shadow: 1px 2px 2px var(--shade), 3px 5px 8px rgba(55, 42, 38, .08); text-align: center; margin-bottom: 16px; }
@@ -266,9 +266,9 @@ main { min-height: 70vh; padding-top: var(--top); }
 .space { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 40px; align-items: center; }
 @media (max-width: 900px) { .space { grid-template-columns: 1fr; } }
 .space .board { display: grid; place-items: center; padding: 50px 20px; background: var(--white); box-shadow: inset 0 0 0 1px var(--rule); }
-.space .box { position: relative; padding: 9%; outline: 2px dashed var(--rose); outline-offset: 0; width: min(100%, 520px); }
+.space .box { position: relative; padding: 9%; outline: 2px dashed var(--dusk); outline-offset: 0; width: min(100%, 520px); }
 .space .box img { width: 100%; }
-.space .box .x { position: absolute; font: 400 22px/1 var(--hand); color: var(--rose); }
+.space .box .x { position: absolute; font: 400 22px/1 var(--hand); color: var(--dusk); }
 .space .box .x.t { top: 6px; left: 50%; transform: translateX(-50%); } .space .box .x.l { left: 8px; top: 50%; transform: translateY(-50%); }
 .sizes { display: grid; gap: 18px; }
 .sizes div { display: flex; align-items: center; gap: 18px; padding-bottom: 18px; border-bottom: 1px dashed var(--rule); }
@@ -282,14 +282,14 @@ main { min-height: 70vh; padding-top: var(--top); }
 .misuse .plate { position: relative; display: grid; place-items: center; aspect-ratio: 4 / 3; background: var(--white); box-shadow: inset 0 0 0 1px var(--rule); overflow: hidden; }
 .misuse .plate img.l { width: 62%; }
 .misuse figcaption { margin-top: 10px; font-size: 16px; }
-.misuse figcaption b { color: var(--rose); font-weight: 600; }
+.misuse figcaption b { color: var(--dusk); font-weight: 600; }
 
 /* ── Colour ────────────────────────────────────────── */
 .chips { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px 18px; }
 @media (max-width: 1000px) { .chips { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 .chip { all: unset; box-sizing: border-box; display: flex; flex-direction: column; cursor: pointer; background: var(--white); box-shadow: var(--shadow-paper); transform: rotate(var(--r, 0deg)); transition: transform .3s ease, box-shadow .3s; }
 .chip:hover { transform: rotate(0deg) translateY(-4px); box-shadow: var(--shadow-lift); }
-.chip:focus-visible { outline: 3px solid var(--rose); outline-offset: 4px; }
+.chip:focus-visible { outline: 3px solid var(--dusk); outline-offset: 4px; }
 .chip .sw { aspect-ratio: 1 / .78; background: var(--c); clip-path: polygon(0 0, 100% 0, 100% 92%, 94% 96%, 86% 92%, 77% 97%, 68% 93%, 58% 98%, 48% 93%, 37% 97%, 27% 92%, 17% 97%, 8% 93%, 0 97%); }
 .chip .sw.edge { box-shadow: inset 0 0 0 1px var(--rule); }
 .chip .meta { padding: 12px 16px 18px; display: grid; gap: 2px; }
@@ -301,7 +301,7 @@ main { min-height: 70vh; padding-top: var(--top); }
 .sub-head { display: flex; align-items: baseline; justify-content: space-between; gap: 20px; flex-wrap: wrap; margin-bottom: 22px; padding-top: 22px; border-top: 1px dashed var(--rule); }
 .sub-head h3 { margin: 0; font: 400 36px/1 var(--hand); color: var(--ink-deep); }
 .sub-head p { margin: 0; max-width: 56ch; font-size: 16px; }
-.chip .ok { min-height: 20px; font-size: 14px; color: var(--rose); }
+.chip .ok { min-height: 20px; font-size: 14px; color: var(--dusk); }
 .prop { display: flex; height: 130px; box-shadow: var(--shadow-paper); }
 .prop div { position: relative; display: flex; align-items: end; padding: 12px; font-size: 14px; line-height: 1.2; min-width: 0; }
 .prop div b { display: block; font: 400 30px/1 var(--hand); }
@@ -311,7 +311,7 @@ main { min-height: 70vh; padding-top: var(--top); }
 .pair .aa i { display: block; font: 400 38px/1 var(--hand); font-style: normal; }
 .pair .r { display: flex; justify-content: space-between; align-items: center; font-size: 14px; }
 .badge { padding: 4px 9px; font: 600 13px/1 var(--sans); letter-spacing: .02em; background: var(--white); color: var(--ink-deep); }
-.badge.fail { background: var(--rose); color: var(--white); }
+.badge.fail { background: var(--dusk); color: var(--white); }
 
 /* ── Type ──────────────────────────────────────────── */
 .faces { display: grid; gap: 22px; }
@@ -319,7 +319,7 @@ main { min-height: 70vh; padding-top: var(--top); }
 .face:nth-child(2) { background: var(--oat); box-shadow: none; }
 .face:nth-child(3) { background: var(--cocoa); color: var(--white); box-shadow: none; }
 @media (max-width: 900px) { .face { grid-template-columns: 1fr; padding: 24px; } }
-.face .lbl .k { font: 400 15px/1 var(--marker); letter-spacing: .05em; text-transform: uppercase; color: var(--rose); }
+.face .lbl .k { font: 400 15px/1 var(--marker); letter-spacing: .05em; text-transform: uppercase; color: var(--dusk); }
 .face:nth-child(3) .lbl .k { color: var(--blush); }
 .face .lbl h3 { margin: 8px 0 6px; font: 600 28px/1.1 var(--sans); }
 .face .lbl p { margin: 0; font-size: 16px; }
@@ -340,7 +340,7 @@ main { min-height: 70vh; padding-top: var(--top); }
 .dl[aria-busy="true"] { opacity: .6; }
 .scale { display: grid; }
 .scale .row { display: grid; grid-template-columns: 170px minmax(0, 1fr) 150px; gap: 20px; align-items: baseline; padding-block: 16px; border-bottom: 1px dashed var(--rule); }
-.scale .row code { font: 500 14px/1.3 var(--sans); color: var(--rose); }
+.scale .row code { font: 500 14px/1.3 var(--sans); color: var(--dusk); }
 .scale .row .m { font-size: 14px; text-align: right; font-variant-numeric: tabular-nums; }
 .scale .row .s { min-width: 0; overflow-wrap: anywhere; color: var(--ink-deep); }
 @media (max-width: 760px) { .scale .row { grid-template-columns: 1fr; gap: 4px; } .scale .row .m { text-align: left; } }
@@ -382,7 +382,7 @@ main { min-height: 70vh; padding-top: var(--top); }
 .vp { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 40px; padding-block: 56px; border-top: 1px dashed var(--rule); }
 @media (max-width: 900px) { .vp { grid-template-columns: 1fr; } }
 .vp h3 { margin: 0; font: 400 clamp(44px, 5vw, 68px)/.95 var(--hand); color: var(--ink-deep); }
-.vp h3 small { display: block; margin-bottom: 10px; font: 400 15px/1 var(--marker); letter-spacing: .05em; text-transform: uppercase; color: var(--rose); }
+.vp h3 small { display: block; margin-bottom: 10px; font: 400 15px/1 var(--marker); letter-spacing: .05em; text-transform: uppercase; color: var(--dusk); }
 .vp .how { margin: 18px 0 0; padding: 0; list-style: none; display: grid; gap: 10px; }
 .vp .how li { padding-left: 26px; position: relative; font-size: 17px; }
 .vp .how li::before { content: ""; position: absolute; left: 0; top: 9px; width: 12px; height: 12px; border-radius: 50%; background: var(--blush); }
@@ -390,10 +390,10 @@ main { min-height: 70vh; padding-top: var(--top); }
 @media (max-width: 600px) { .lessmore { grid-template-columns: 1fr; } }
 .less, .more { position: relative; padding: 26px 24px; }
 .less { background: var(--paper-grey); transform: rotate(-1.5deg); }
-.less .line { text-decoration: line-through; text-decoration-color: var(--rose); text-decoration-thickness: 2px; color: var(--ink); }
+.less .line { text-decoration: line-through; text-decoration-color: var(--dusk); text-decoration-thickness: 2px; color: var(--ink); }
 .more { background: var(--white); box-shadow: var(--shadow-paper); transform: rotate(1deg); }
 .more .line { font: 400 34px/1.1 var(--hand); color: var(--ink-deep); }
-.less .k, .more .k { display: block; margin-bottom: 10px; font: 400 15px/1 var(--marker); letter-spacing: .05em; text-transform: uppercase; color: var(--rose); }
+.less .k, .more .k { display: block; margin-bottom: 10px; font: 400 15px/1 var(--marker); letter-spacing: .05em; text-transform: uppercase; color: var(--dusk); }
 .less .line { margin: 0; font-size: 19px; }
 .more .line { margin: 0; }
 .words { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 30px; }
@@ -403,10 +403,10 @@ main { min-height: 70vh; padding-top: var(--top); }
 .words h3 { margin: 0 0 16px; font: 400 34px/1 var(--hand); color: var(--ink-deep); }
 .words ul { margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 10px; }
 .words li { padding: 8px 14px; background: var(--lilac); font-size: 16px; color: var(--ink-deep); }
-.words .avoid li { background: var(--white); text-decoration: line-through; text-decoration-color: var(--rose); color: var(--ink); }
+.words .avoid li { background: var(--white); text-decoration: line-through; text-decoration-color: var(--dusk); color: var(--ink); }
 .mech { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0; border-top: 1px dashed var(--rule); }
 .mech div { padding: 20px 20px 22px 0; border-bottom: 1px dashed var(--rule); }
-.mech b { display: block; font: 400 15px/1 var(--marker); letter-spacing: .05em; text-transform: uppercase; color: var(--rose); margin-bottom: 8px; }
+.mech b { display: block; font: 400 15px/1 var(--marker); letter-spacing: .05em; text-transform: uppercase; color: var(--dusk); margin-bottom: 8px; }
 .mech p { margin: 0; font-size: 16px; }
 
 /* ── Scrapbook ─────────────────────────────────────── */
@@ -420,7 +420,7 @@ main { min-height: 70vh; padding-top: var(--top); }
 .mat .txt { padding: 18px 22px 22px; }
 .mat h3 { margin: 0 0 6px; font: 400 30px/1 var(--hand); color: var(--ink-deep); }
 .mat p { margin: 0; font-size: 16px; }
-.mat code { font: 500 13px/1 var(--sans); color: var(--rose); }
+.mat code { font: 500 13px/1 var(--sans); color: var(--dusk); }
 .folder { width: 88%; }
 .folder .tab { display: inline-block; margin-left: 24px; padding: 10px 20px 4px; background: var(--taupe); border-radius: 16px 16px 0 0; font: 400 22px/1 var(--marker); color: var(--ink-deep); }
 .folder .body { background: var(--taupe); padding: 10px; box-shadow: 1px 2px 2px var(--shade); }
@@ -446,7 +446,7 @@ main { min-height: 70vh; padding-top: var(--top); }
 .demo .txt .row { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
 .demo h3 { margin: 0; font: 400 30px/1 var(--hand); color: var(--ink-deep); }
 .demo p { margin: 0; font-size: 16px; }
-.demo .t { font-size: 14px; color: var(--rose); font-variant-numeric: tabular-nums; }
+.demo .t { font-size: 14px; color: var(--dusk); font-variant-numeric: tabular-nums; }
 .replay { font: 500 14px/1 var(--sans); padding: 9px 14px; background: var(--cocoa); color: var(--white); border: 0; cursor: pointer; }
 .replay:hover { background: var(--cocoa-deep); }
 .ringdemo { position: relative; padding: 34px 54px; }
@@ -460,14 +460,14 @@ main { min-height: 70vh; padding-top: var(--top); }
 .count b { display: block; font: 400 72px/1 var(--hand); color: var(--ink-deep); font-variant-numeric: tabular-nums; min-width: 2.2ch; }
 .count span { font-size: 15px; }
 .loveline { position: relative; font: 600 30px/1 var(--sans); color: var(--ink-deep); }
-.loveline em { position: relative; font-style: normal; color: var(--rose); }
+.loveline em { position: relative; font-style: normal; color: var(--dusk); }
 .loveline .hearts { inset: auto -20px 0; height: 220px; }
 .liftdemo { display: flex; gap: 30px; align-items: center; }
 .liftdemo .roid { width: 150px; }
 .liftdemo .roid:hover { transform: rotate(0deg) translateY(-6px); box-shadow: var(--shadow-lift); }
 .timing { width: 100%; border-collapse: collapse; font-size: 16px; }
 .timing th, .timing td { text-align: left; padding: 14px 12px 14px 0; border-bottom: 1px dashed var(--rule); vertical-align: top; }
-.timing th { font: 400 15px/1 var(--marker); letter-spacing: .05em; text-transform: uppercase; color: var(--rose); }
+.timing th { font: 400 15px/1 var(--marker); letter-spacing: .05em; text-transform: uppercase; color: var(--dusk); }
 .timing td:first-child { font: 400 24px/1.1 var(--hand); color: var(--ink-deep); }
 .tablewrap { overflow-x: auto; }
 
@@ -578,14 +578,14 @@ main { min-height: 70vh; padding-top: var(--top); }
         <i class="wig" style="left:6%;bottom:38%;width:86%;height:15%;background:var(--taupe);transform:rotate(2deg);--lr:4deg"></i>
         <i class="wig" style="left:12%;bottom:24%;width:78%;height:15%;background:var(--paper);transform:rotate(-1deg);--lr:-2deg"></i>
         <i class="wig" style="left:8%;bottom:10%;width:84%;height:15%;background:var(--cocoa);transform:rotate(3deg);--lr:6deg"></i>
-        <i class="wig" style="left:68%;bottom:6%;width:14%;aspect-ratio:1;border-radius:50%;background:var(--rose);--ly:-14px"></i>
+        <i class="wig" style="left:68%;bottom:6%;width:14%;aspect-ratio:1;border-radius:50%;background:var(--dusk);--ly:-14px"></i>
       </div>
     </a>
     <a class="tile t-type" href="#type">
       <h2>Typography</h2><span class="go">Open →</span>
       <div class="art" aria-hidden="true">
         <span class="wig hand" style="left:8%;bottom:4%;font-size:clamp(130px,15vw,230px);line-height:1;color:var(--ink-deep);--lr:-4deg">Aa</span>
-        <span class="wig marker" style="right:10%;bottom:14%;font-size:clamp(50px,5vw,80px);line-height:1;color:var(--rose);--lr:6deg;--ly:-10px">Aa</span>
+        <span class="wig marker" style="right:10%;bottom:14%;font-size:clamp(50px,5vw,80px);line-height:1;color:var(--dusk);--lr:6deg;--ly:-10px">Aa</span>
       </div>
     </a>
     <a class="tile t-illus" href="#illustration">
@@ -796,7 +796,7 @@ main { min-height: 70vh; padding-top: var(--top); }
       <figure><div class="plate"><img class="l" src="assets/img/logo.png" alt="" style="transform:rotate(-14deg)"><svg class="xmark" viewBox="0 0 100 75" preserveAspectRatio="none" aria-hidden="true"><path d="M20 12 L80 63 M80 12 L20 63"/></svg></div><figcaption><b>Don't tilt it.</b> Photos and stickers tilt. The logo stays straight.</figcaption></figure>
       <figure><div class="plate"><img class="l" src="assets/img/logo.png" alt="" style="filter:hue-rotate(150deg) saturate(2.4)"><svg class="xmark" viewBox="0 0 100 75" preserveAspectRatio="none" aria-hidden="true"><path d="M20 12 L80 63 M80 12 L20 63"/></svg></div><figcaption><b>Don't recolour it.</b> Cocoa and blush, or all white. Nothing else.</figcaption></figure>
       <figure><div class="plate"><img class="l" src="assets/img/logo.png" alt="" style="transform:scale(1.45,.75)"><svg class="xmark" viewBox="0 0 100 75" preserveAspectRatio="none" aria-hidden="true"><path d="M20 12 L80 63 M80 12 L20 63"/></svg></div><figcaption><b>Don't stretch or squash it.</b> Always scale it from a corner.</figcaption></figure>
-      <figure><div class="plate"><img class="l" src="assets/img/logo.png" alt="" style="filter:drop-shadow(5px 5px 0 #ac2d4b)"><svg class="xmark" viewBox="0 0 100 75" preserveAspectRatio="none" aria-hidden="true"><path d="M20 12 L80 63 M80 12 L20 63"/></svg></div><figcaption><b>Don't add effects.</b> No shadows, outlines, glows or gradients.</figcaption></figure>
+      <figure><div class="plate"><img class="l" src="assets/img/logo.png" alt="" style="filter:drop-shadow(5px 5px 0 #9a5568)"><svg class="xmark" viewBox="0 0 100 75" preserveAspectRatio="none" aria-hidden="true"><path d="M20 12 L80 63 M80 12 L20 63"/></svg></div><figcaption><b>Don't add effects.</b> No shadows, outlines, glows or gradients.</figcaption></figure>
       <figure><div class="plate"><img src="assets/img/xmas-detail.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"><img class="l" src="assets/img/logo.png" alt="" style="position:relative"><svg class="xmark" viewBox="0 0 100 75" preserveAspectRatio="none" aria-hidden="true"><path d="M20 12 L80 63 M80 12 L20 63"/></svg></div><figcaption><b>Don't put it on busy photos.</b> Use a calm area, or the white logo on a dark photo.</figcaption></figure>
       <figure><div class="plate"><span style="font:600 40px/1 var(--sans);color:var(--ink-deep)">Elsie's Story</span><svg class="xmark" viewBox="0 0 100 75" preserveAspectRatio="none" aria-hidden="true"><path d="M20 12 L80 63 M80 12 L20 63"/></svg></div><figcaption><b>Don't retype it.</b> Always use the logo files, never the name in a font.</figcaption></figure>
     </div>
@@ -814,24 +814,24 @@ main { min-height: 70vh; padding-top: var(--top); }
   <section class="section" style="border-top:0;padding-top:20px">
     <div class="head">
       <h2><small>The palette</small>Paint chips</h2>
-      <div class="text"><p>Our nine brand colours, straight from the charity's own palette sheet. Pale Blush is our most used pink. Taupe and Paper Grey are the options for racer colours. Click a chip to copy its hex value.</p></div>
+      <div class="text"><p>Our nine brand colours, straight from the charity's own palette sheet. Pale Blush comes first: it's our Elsie pink and the one we use most. We stay away from red. Taupe and Paper Grey are the options for racer colours. Click a chip to copy its hex value.</p></div>
     </div>
     <div class="chips" id="chips"></div>
-    <div class="sub-head"><h3>Supporting colours from the website</h3><p>Two more colours the website uses, for the footer and for tiny accents. Use them alongside the brand palette, never instead of it.</p></div>
+    <div class="sub-head"><h3>Supporting colours</h3><p>Two supporting colours: cocoa for the footer, and a darker dusky pink for small labels and accents. Use them alongside the brand palette, never instead of it.</p></div>
     <div class="chips" id="chips-web"></div>
   </section>
 
   <section class="section">
     <div class="head">
       <h2><small>Balance</small>Mostly paper</h2>
-      <div class="text"><p>Pages are mostly cream paper with cocoa-grey writing. Soft tints set things apart, cocoa grounds the bottom of the page, and rose appears only in small marks: a focus ring, a heart, the word "love".</p></div>
+      <div class="text"><p>Pages are mostly cream paper with cocoa-grey writing. Soft tints set things apart, cocoa grounds the bottom of the page, and dusky pink appears only in small marks: a focus ring, a heart, the word "love".</p></div>
     </div>
-    <div class="prop" role="img" aria-label="Proportions: paper 70%, ink 15%, soft tints 10%, cocoa 4%, rose 1%">
+    <div class="prop" role="img" aria-label="Proportions: paper 70%, ink 15%, soft tints 10%, cocoa 4%, dusky pink 1%">
       <div style="flex:70;background:var(--paper);color:var(--ink-deep)"><span><b>Paper</b>70%</span></div>
       <div style="flex:15;background:var(--ink);color:var(--white)"><span><b>Ink</b>15%</span></div>
       <div style="flex:10;background:var(--blush);color:var(--ink-deep)"><span><b>Tints</b>10%</span></div>
       <div style="flex:4;background:var(--cocoa);color:var(--white)"><span><b>&nbsp;</b>4%</span></div>
-      <div style="flex:1.4;background:var(--rose)"></div>
+      <div style="flex:1.4;background:var(--dusk)"></div>
     </div>
   </section>
 
@@ -925,7 +925,7 @@ main { min-height: 70vh; padding-top: var(--top); }
     <div class="tiers">
       <div class="tier"><div class="frame" style="--r:-2deg"><img src="assets/img/butterfly.webp" alt="Crayon butterfly"></div><h3>Crayon doodles</h3><p>Blush, oat and ink only. Overlap a photo corner, sit in the margins, or point at a button. Three per screen at most.</p></div>
       <div class="tier"><div class="frame" style="--r:1.5deg"><img src="assets/img/garden-watercolour.jpg" alt="Watercolour garden scene"></div><h3>Watercolour scenes</h3><p>For grants and projects: what the money made possible. Loose, soft, with a scatter of pink hearts. Always on white.</p></div>
-      <div class="tier"><div class="frame" style="--r:-1deg"><img src="assets/img/xmas-detail.jpg" alt="Child's Christmas drawing printed on a pink jumper" style="object-fit:cover"></div><h3>Children's artwork</h3><p>Designs drawn by children, like the Christmas jumper. Credit the artist by first name and age, with permission: "Designed by Ava, 7".</p></div>
+      <div class="tier"><div class="frame" style="--r:-1deg"><img src="assets/img/xmas-detail.jpg" alt="Child's Christmas drawing printed on a pink jumper" style="object-fit:cover"></div><h3>Children's artwork</h3><p>Designs drawn by children, like the Christmas jumper. Credit the artist by first name, with permission: "Designed by Felicity".</p></div>
     </div>
   </section>
 
@@ -1465,8 +1465,9 @@ main { min-height: 70vh; padding-top: var(--top); }
   addEventListener('scroll', nearest, { passive: true });
 
   /* Colour chips */
-  /* [name, hex, rgb, token, role, tilt, tag] — the brand palette in the order of the palette sheet */
+  /* [name, hex, rgb, token, role, tilt, tag] — the brand palette: Pale Blush, our Elsie pink, first; then the palette sheet order */
   var CHIPS = [
+    ['Pale Blush', '#E6BCC6', '230 188 198', 'pale-blush', 'Our signature pink: highlights, form focus and pink grounds. Write on it in cocoa (4.99:1), not ink.', -1, 'Our most used pink'],
     ['Ink', '#796867', '121 104 103', 'ink', 'All text, headings, nav and outlines on paper and white.', -1],
     ['Taupe', '#D6CAC1', '214 202 193', 'taupe', 'File folders and quiet panels. Write on it in cocoa (5.28:1).', 1.5, 'Racer colour option'],
     ['Lilac', '#E8D8E3', '232 216 227', 'lilac', 'A soft cool tint for backgrounds, cards and social grounds. Write on it in cocoa (6.2:1).', -1.5],
@@ -1474,12 +1475,11 @@ main { min-height: 70vh; padding-top: var(--top); }
     ['Paper Grey', '#F2F1EB', '242 241 235', 'paper-grey', 'Inside folders and recycled-paper sheets. Ink passes on it (4.65:1).', -1, 'Racer colour option'],
     ['Oat', '#E6D5C0', '230 213 192', 'oat', 'Alternate folders and the "Who We’ve Helped" ground. Write on it in cocoa (5.91:1).', 1],
     ['Clay', '#D4A395', '212 163 149', 'clay', 'A warm accent for illustration, products and blocks of colour. Not for body text: cocoa on clay is only 3.82:1, so headings 24px and over only.', -2],
-    ['White', '#FFFFFF', '255 255 255', 'white', 'Polaroid frames, cards and notepaper. Ink on white is 5.26:1.', 1.5],
-    ['Pale Blush', '#E6BCC6', '230 188 198', 'pale-blush', 'Our signature pink: highlights, form focus and pink grounds. Write on it in cocoa (4.99:1), not ink.', -1, 'Our most used pink']
+    ['White', '#FFFFFF', '255 255 255', 'white', 'Polaroid frames, cards and notepaper. Ink on white is 5.26:1.', 1.5]
   ];
   var WEB = [
     ['Cocoa', '#574A48', '87 74 72', 'cocoa', 'The footer, the newsletter envelope and text on every pink and tint.', 1],
-    ['Rose', '#AC2D4B', '172 45 75', 'rose', 'Tiny accents only: focus rings, the word "love" and form errors.', -1.5]
+    ['Dusky Pink', '#9A5568', '154 85 104', 'dusk', 'Small marker labels, kickers, focus rings and the word "love". A dusky pink, never red. Passes as text on white (5.42:1) and paper grey (4.79:1).', -1.5]
   ];
   var LIGHT = ['Paper', 'Paper Grey', 'White'];
   function addChips(list, holder) {
@@ -1487,7 +1487,7 @@ main { min-height: 70vh; padding-top: var(--top); }
       var b = document.createElement('button');
       b.type = 'button'; b.className = 'chip'; b.style.setProperty('--c', c[1]); b.style.setProperty('--r', c[5] + 'deg');
       b.setAttribute('aria-label', 'Copy ' + c[0] + ' ' + c[1]);
-      b.innerHTML = '<span class="sw' + (LIGHT.indexOf(c[0]) >= 0 ? ' edge' : '') + '"></span><span class="meta">' + (c[6] ? '<span class="tag">' + c[6] + '</span>' : '') + '<b>' + c[0] + '</b><span class="v">' + c[1] + ' · RGB ' + c[2] + '</span><span class="v" style="color:var(--rose)">--' + c[3] + '</span><span class="role">' + c[4] + '</span><span class="ok" aria-live="polite"></span></span>';
+      b.innerHTML = '<span class="sw' + (LIGHT.indexOf(c[0]) >= 0 ? ' edge' : '') + '"></span><span class="meta">' + (c[6] ? '<span class="tag">' + c[6] + '</span>' : '') + '<b>' + c[0] + '</b><span class="v">' + c[1] + ' · RGB ' + c[2] + '</span><span class="v" style="color:var(--dusk)">--' + c[3] + '</span><span class="role">' + c[4] + '</span><span class="ok" aria-live="polite"></span></span>';
       b.addEventListener('click', function () {
         var ok = b.querySelector('.ok');
         function done(msg) { ok.textContent = msg; setTimeout(function () { ok.textContent = ''; }, 1600); }
@@ -1512,11 +1512,12 @@ main { min-height: 70vh; padding-top: var(--top); }
     ['var(--clay)', 'var(--ink-deep)', 'Cocoa on clay', '3.82', 'large'],
     ['var(--cocoa)', 'var(--white)', 'White on cocoa', '8.47', true],
     ['var(--cocoa)', 'var(--blush)', 'Blush on cocoa', '5.12', true],
-    ['var(--rose)', 'var(--white)', 'White on rose', '6.50', true],
+    ['var(--dusk)', 'var(--white)', 'White on dusky pink', '5.42', true],
+    ['var(--white)', 'var(--dusk)', 'Dusky pink text on white', '5.42', true],
     ['var(--blush)', 'var(--ink)', 'Ink on blush', '3.18', false],
     ['var(--taupe)', 'var(--ink)', 'Ink on taupe', '3.28', false],
     ['var(--white)', 'var(--pale-blush)', 'Pale blush text on white', '1.70', false],
-    ['var(--cocoa)', 'var(--rose)', 'Rose on cocoa', '1.32', false]
+    ['var(--cocoa)', 'var(--dusk)', 'Dusky pink on cocoa', '1.56', false]
   ];
   var pairs = document.getElementById('pairs');
   PAIRS.forEach(function (p) {
