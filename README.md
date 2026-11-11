@@ -24,10 +24,10 @@ Then open http://127.0.0.1:8792/index.html.
 
 | Name | Hex | Notes |
 | --- | --- | --- |
-| Pale Blush | `#E6BCC6` | our Elsie pink, the one we use most |
-| Ink | `#796867` | |
+| Elsie Pink | `#E6BCC6` | our Elsie pink, the one we use most |
+| Mocha | `#796867` | |
 | Taupe | `#D6CAC1` | racer colour option |
-| Lilac | `#E8D8E3` | |
+| Parma Lilac | `#E8D8E3` | |
 | Blush | `#EFBCC8` | |
 | Paper Grey | `#F2F1EB` | racer colour option |
 | Oat | `#E6D5C0` | |

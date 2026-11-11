@@ -18,13 +18,13 @@
   --white: #ffffff;
   --cocoa: #574a48;
   --cocoa-deep: #3f3534;
-  --ink: #796867;
+  --mocha: #796867;
   --ink-deep: #574a48;
   --dusk: #9a5568;
   --blush: #efbcc8;
-  --pale-blush: #e6bcc6;
+  --elsie-pink: #e6bcc6;
   --oat: #e6d5c0;
-  --lilac: #e8d8e3;
+  --parma-lilac: #e8d8e3;
   --clay: #d4a395;
   --taupe: #d6cac1;
   --notebook: rgba(120, 170, 210, 0.42);
@@ -50,7 +50,7 @@
 [hidden] { display: none !important; }
 html { scroll-padding-top: calc(var(--top) + 16px); -webkit-text-size-adjust: 100%; }
 body {
-  margin: 0; color: var(--ink); font-family: var(--sans); font-size: 18px; line-height: 1.5;
+  margin: 0; color: var(--mocha); font-family: var(--sans); font-size: 18px; line-height: 1.5;
   background: var(--paper) url("assets/img/paper-texture.webp") center / cover fixed;
   -webkit-font-smoothing: antialiased;
 }
@@ -74,7 +74,7 @@ h1, h2, h3 { text-wrap: balance; }
 .bar .home img { height: 46px; width: auto; }
 .bar .home .bb { padding-left: 14px; border-left: 1px dashed var(--rule); font: 400 15px/1.1 var(--marker); letter-spacing: .05em; text-transform: uppercase; color: var(--dusk); white-space: nowrap; }
 .seg { display: flex; gap: 2px; padding: 3px; background: var(--paper-grey); box-shadow: inset 0 0 0 1px var(--rule); }
-.seg a { padding: 7px 18px; font-size: 15px; line-height: 20px; text-decoration: none; color: var(--ink); transition: background-color .2s, color .2s; }
+.seg a { padding: 7px 18px; font-size: 15px; line-height: 20px; text-decoration: none; color: var(--mocha); transition: background-color .2s, color .2s; }
 .seg a:hover { color: var(--ink-deep); background: var(--white); }
 .seg a[aria-current="page"] { background: var(--cocoa); color: var(--white); }
 .bar .site { justify-self: end; font-size: 15px; text-decoration: none; padding: 8px 4px; }
@@ -89,12 +89,12 @@ main { min-height: 70vh; padding-top: var(--top); }
 .hand { font-family: var(--hand); font-weight: 400; }
 .marker { font-family: var(--marker); font-weight: 400; }
 .kicker { font-family: var(--marker); font-size: 17px; letter-spacing: .04em; text-transform: uppercase; color: var(--dusk); }
-.btn { position: relative; display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 60px; min-width: 220px; padding: 0 34px; font: 600 22px/1 var(--sans); color: var(--ink); text-decoration: none; border: 0; cursor: pointer; background: url("assets/img/sketch-frame.png") center / 100% 100% no-repeat; transition: transform .2s ease; }
+.btn { position: relative; display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 60px; min-width: 220px; padding: 0 34px; font: 600 22px/1 var(--sans); color: var(--mocha); text-decoration: none; border: 0; cursor: pointer; background: url("assets/img/sketch-frame.png") center / 100% 100% no-repeat; transition: transform .2s ease; }
 .btn:hover { transform: rotate(-2deg); color: var(--ink-deep); }
 .btn--sm { min-height: 46px; min-width: 150px; font-size: 17px; padding: 0 22px; }
 .tl { text-decoration: underline; text-underline-offset: 6px; text-decoration-thickness: 1px; }
 .tl:hover { text-decoration-thickness: 2px; color: var(--dusk); }
-.roid { display: block; background: var(--white); padding: 12px 12px 0; box-shadow: var(--shadow-photo); transform: rotate(var(--r, 0deg)); transition: transform .35s ease, box-shadow .35s ease; color: var(--ink); text-decoration: none; }
+.roid { display: block; background: var(--white); padding: 12px 12px 0; box-shadow: var(--shadow-photo); transform: rotate(var(--r, 0deg)); transition: transform .35s ease, box-shadow .35s ease; color: var(--mocha); text-decoration: none; }
 .roid .im { display: block; position: relative; aspect-ratio: 1 / 1; overflow: hidden; background: var(--paper-grey); }
 .roid .im img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .roid .pen { display: block; padding: 10px 4px 12px; font: 400 26px/1.1 var(--hand); text-align: center; min-height: 52px; }
@@ -133,7 +133,7 @@ main { min-height: 70vh; padding-top: var(--top); }
 .logo-anim .puff { position: absolute; z-index: 4; width: 10px; height: 10px; background: var(--blush); transform: rotate(45deg); pointer-events: none; }
 .logo-anim .puff::before, .logo-anim .puff::after { content: ""; position: absolute; width: 10px; height: 10px; border-radius: 50%; background: inherit; }
 .logo-anim .puff::before { left: -5px; } .logo-anim .puff::after { top: -5px; }
-.stage .again { font: 500 14px/1 var(--sans); color: var(--ink); background: none; border: 0; padding: 8px 4px; cursor: pointer; opacity: 0; animation: fade .8s 5.6s forwards; }
+.stage .again { font: 500 14px/1 var(--sans); color: var(--mocha); background: none; border: 0; padding: 8px 4px; cursor: pointer; opacity: 0; animation: fade .8s 5.6s forwards; }
 .stage .again:hover { color: var(--dusk); text-decoration: underline; text-underline-offset: 4px; }
 /* While the logo is being written the rest of the welcome page waits, then follows on */
 .stage.js-intro:not(.revealed) .bbk, .stage.js-intro:not(.revealed) .sub, .stage.js-intro:not(.revealed) .btn,
@@ -169,7 +169,7 @@ main { min-height: 70vh; padding-top: var(--top); }
 .tiles { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; max-width: 1440px; margin: 0 auto; padding-bottom: 20px; }
 @media (min-width: 1180px) { .tiles { grid-template-columns: repeat(3, minmax(0, 1fr)); } .tiles .tile--wide { grid-column: span 2; aspect-ratio: auto; } }
 @media (max-width: 720px) { .tiles { grid-template-columns: 1fr; } }
-.tile { position: relative; overflow: hidden; display: block; aspect-ratio: 1 / .92; background: var(--paper-warm); color: var(--ink); text-decoration: none; box-shadow: inset 0 0 0 1px var(--rule); transition: background-color .45s, color .45s, box-shadow .45s; }
+.tile { position: relative; overflow: hidden; display: block; aspect-ratio: 1 / .92; background: var(--paper-warm); color: var(--mocha); text-decoration: none; box-shadow: inset 0 0 0 1px var(--rule); transition: background-color .45s, color .45s, box-shadow .45s; }
 .tile h2 { position: relative; z-index: 2; margin: 0; padding: 22px 26px; font: 400 clamp(34px, 3.4vw, 48px)/1 var(--hand); }
 .tile .go { position: absolute; z-index: 2; top: 30px; right: 26px; font-size: 15px; opacity: 0; transform: translateX(-6px); transition: opacity .3s, transform .3s; }
 .tile .art { position: absolute; inset: 0; z-index: 1; filter: grayscale(1) sepia(.2); opacity: .38; transition: filter .5s, opacity .5s; }
@@ -182,7 +182,7 @@ main { min-height: 70vh; padding-top: var(--top); }
 .t-logo    { --bg: var(--paper-grey); }
 .t-colour  { --bg: var(--oat); }
 .t-type    { --bg: var(--taupe); }
-.t-illus   { --bg: var(--lilac); }
+.t-illus   { --bg: var(--parma-lilac); }
 .t-photo   { --bg: var(--cocoa); --fg: var(--white); }
 .t-voice   { --bg: var(--paper-grey); }
 .t-scrap   { --bg: var(--oat); }
@@ -250,7 +250,7 @@ main { min-height: 70vh; padding-top: var(--top); }
 .part h3 { margin: 4px 0 6px; font: 400 32px/1 var(--hand); color: var(--ink-deep); }
 .part p { margin: 0 0 12px; font-size: 16px; }
 .toggle { display: inline-flex; padding: 3px; background: var(--paper-grey); box-shadow: inset 0 0 0 1px var(--rule); }
-.toggle button { font: 500 14px/1 var(--sans); padding: 8px 14px; border: 0; background: transparent; color: var(--ink); cursor: pointer; }
+.toggle button { font: 500 14px/1 var(--sans); padding: 8px 14px; border: 0; background: transparent; color: var(--mocha); cursor: pointer; }
 .toggle button[aria-pressed="true"] { background: var(--cocoa); color: var(--white); }
 .motion-logo { display: grid; grid-template-columns: minmax(0, 8fr) minmax(0, 4fr); gap: 30px; align-items: stretch; }
 @media (max-width: 960px) { .motion-logo { grid-template-columns: 1fr; } }
@@ -334,7 +334,7 @@ main { min-height: 70vh; padding-top: var(--top); }
 .dl small { font-weight: 400; font-size: 13px; opacity: .85; }
 .dl:hover { transform: rotate(-2deg); background: var(--cocoa-deep); }
 .face:nth-child(3) .dl { background: var(--white); color: var(--ink-deep); }
-.face:nth-child(3) .dl:hover { background: var(--pale-blush); }
+.face:nth-child(3) .dl:hover { background: var(--elsie-pink); }
 .dl[aria-busy="true"] { opacity: .6; }
 .scale { display: grid; }
 .scale .row { display: grid; grid-template-columns: 170px minmax(0, 1fr) 150px; gap: 20px; align-items: baseline; padding-block: 16px; border-bottom: 1px dashed var(--rule); }
@@ -388,7 +388,7 @@ main { min-height: 70vh; padding-top: var(--top); }
 @media (max-width: 600px) { .lessmore { grid-template-columns: 1fr; } }
 .less, .more { position: relative; padding: 26px 24px; }
 .less { background: var(--paper-grey); transform: rotate(-1.5deg); }
-.less .line { text-decoration: line-through; text-decoration-color: var(--dusk); text-decoration-thickness: 2px; color: var(--ink); }
+.less .line { text-decoration: line-through; text-decoration-color: var(--dusk); text-decoration-thickness: 2px; color: var(--mocha); }
 .more { background: var(--white); box-shadow: var(--shadow-paper); transform: rotate(1deg); }
 .more .line { font: 400 34px/1.1 var(--hand); color: var(--ink-deep); }
 .less .k, .more .k { display: block; margin-bottom: 10px; font: 400 15px/1 var(--marker); letter-spacing: .05em; text-transform: uppercase; color: var(--dusk); }
@@ -400,8 +400,8 @@ main { min-height: 70vh; padding-top: var(--top); }
 .words .col.avoid { background: var(--paper-grey); box-shadow: none; }
 .words h3 { margin: 0 0 16px; font: 400 34px/1 var(--hand); color: var(--ink-deep); }
 .words ul { margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 10px; }
-.words li { padding: 8px 14px; background: var(--lilac); font-size: 16px; color: var(--ink-deep); }
-.words .avoid li { background: var(--white); text-decoration: line-through; text-decoration-color: var(--dusk); color: var(--ink); }
+.words li { padding: 8px 14px; background: var(--parma-lilac); font-size: 16px; color: var(--ink-deep); }
+.words .avoid li { background: var(--white); text-decoration: line-through; text-decoration-color: var(--dusk); color: var(--mocha); }
 .mech { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0; border-top: 1px dashed var(--rule); }
 .mech div { padding: 20px 20px 22px 0; border-bottom: 1px dashed var(--rule); }
 .mech b { display: block; font: 400 15px/1 var(--marker); letter-spacing: .05em; text-transform: uppercase; color: var(--dusk); margin-bottom: 8px; }
@@ -812,7 +812,7 @@ main { min-height: 70vh; padding-top: var(--top); }
   <section class="section" style="border-top:0;padding-top:20px">
     <div class="head">
       <h2><small>The palette</small>Paint chips</h2>
-      <div class="text"><p>Our nine brand colours, straight from the charity's own palette sheet. Pale Blush comes first: it's our Elsie pink and the one we use most. We stay away from red. Taupe and Paper Grey are the options for racer colours. Click a chip to copy its hex value.</p></div>
+      <div class="text"><p>Our nine brand colours, straight from the charity's own palette sheet. Elsie Pink comes first: it's the pink we use most. We stay away from red. Taupe and Paper Grey are the options for racer colours. Click a chip to copy its hex value.</p></div>
     </div>
     <div class="chips" id="chips"></div>
     <div class="sub-head"><h3>Supporting colours</h3><p>Two supporting colours: cocoa for the footer, and a darker dusky pink for small labels and accents. Use them alongside the brand palette, never instead of it.</p></div>
@@ -824,9 +824,9 @@ main { min-height: 70vh; padding-top: var(--top); }
       <h2><small>Balance</small>Mostly paper</h2>
       <div class="text"><p>Pages are mostly cream paper with cocoa-grey writing. Soft tints set things apart, cocoa grounds the bottom of the page, and dusky pink appears only in small marks: a focus ring, a heart, the word "love".</p></div>
     </div>
-    <div class="prop" role="img" aria-label="Proportions: paper 70%, ink 15%, soft tints 10%, cocoa 4%, dusky pink 1%">
+    <div class="prop" role="img" aria-label="Proportions: paper 70%, mocha 15%, soft tints 10%, cocoa 4%, dusky pink 1%">
       <div style="flex:70;background:var(--paper);color:var(--ink-deep)"><span><b>Paper</b>70%</span></div>
-      <div style="flex:15;background:var(--ink);color:var(--white)"><span><b>Ink</b>15%</span></div>
+      <div style="flex:15;background:var(--mocha);color:var(--white)"><span><b>Mocha</b>15%</span></div>
       <div style="flex:10;background:var(--blush);color:var(--ink-deep)"><span><b>Tints</b>10%</span></div>
       <div style="flex:4;background:var(--cocoa);color:var(--white)"><span><b>&nbsp;</b>4%</span></div>
       <div style="flex:1.4;background:var(--dusk)"></div>
@@ -836,10 +836,10 @@ main { min-height: 70vh; padding-top: var(--top); }
   <section class="section">
     <div class="head">
       <h2><small>Readable for everyone</small>Pairings that work</h2>
-      <div class="text"><p>Body text needs 4.5:1 contrast (WCAG 2.2 AA). The soft tints are too light for our usual ink colour, so on blush, oat and taupe always write in cocoa.</p></div>
+      <div class="text"><p>Body text needs 4.5:1 contrast (WCAG 2.2 AA). The soft tints are too light for our usual mocha, so on blush, oat and taupe always write in cocoa.</p></div>
     </div>
     <div class="pairs" id="pairs"></div>
-    <p class="hint">Pale Blush is a background, never a text colour: as text on white it's only 1.70:1. Where links or buttons turn pink on hover, they must also tilt or underline.</p>
+    <p class="hint">Elsie Pink is a background, never a text colour: as text on white it's only 1.70:1. Where links or buttons turn pink on hover, they must also tilt or underline.</p>
   </section>
 </section>
 
@@ -886,7 +886,7 @@ main { min-height: 70vh; padding-top: var(--top); }
       <div class="l"><h3>Our Impact So Far</h3><p>Because of your support, Elsie's Story continues to fund projects, uplift families and bring people together in meaningful ways.</p><a class="btn" href="#" onclick="return false">Donate Now</a></div>
       <div class="r">
         <div class="tag"><span>Our Impact So Far</span><span>Paperink · hand-display</span></div>
-        <div class="tag"><span style="font:400 16px/1.4 var(--sans);color:var(--ink)">Because of your support…</span><span>Jost 400 · lead</span></div>
+        <div class="tag"><span style="font:400 16px/1.4 var(--sans);color:var(--mocha)">Because of your support…</span><span>Jost 400 · lead</span></div>
         <div class="tag"><span style="font:600 18px/1 var(--sans);color:var(--ink-deep)">Donate Now</span><span>Jost 600 · button</span></div>
         <p style="margin:12px 0 0;font-size:15px">If Paperink can't load (in an email, say), use the heading as an image with real alt text, or fall back to Jost 600. Never swap in another script font.</p>
       </div>
@@ -921,7 +921,7 @@ main { min-height: 70vh; padding-top: var(--top); }
       <div class="text"><p>Use the simplest one that does the job. Doodles decorate. Watercolours tell a scene. Children's drawings are the real thing, credited by first name.</p></div>
     </div>
     <div class="tiers">
-      <div class="tier"><div class="frame" style="--r:-2deg"><img src="assets/img/butterfly.webp" alt="Crayon butterfly"></div><h3>Crayon doodles</h3><p>Blush, oat and ink only. Overlap a photo corner, sit in the margins, or point at a button. Three per screen at most.</p></div>
+      <div class="tier"><div class="frame" style="--r:-2deg"><img src="assets/img/butterfly.webp" alt="Crayon butterfly"></div><h3>Crayon doodles</h3><p>Blush, oat and mocha only. Overlap a photo corner, sit in the margins, or point at a button. Three per screen at most.</p></div>
       <div class="tier"><div class="frame" style="--r:1.5deg"><img src="assets/img/garden-watercolour.jpg" alt="Watercolour garden scene"></div><h3>Watercolour scenes</h3><p>For grants and projects: what the money made possible. Loose, soft, with a scatter of pink hearts. Always on white.</p></div>
       <div class="tier"><div class="frame" style="--r:-1deg"><img src="assets/img/xmas-detail.jpg" alt="Child's Christmas drawing printed on a pink jumper" style="object-fit:cover"></div><h3>Children's artwork</h3><p>Designs drawn by children, like the Christmas jumper. Credit the artist by first name, with permission: "Designed by Felicity".</p></div>
     </div>
@@ -932,7 +932,7 @@ main { min-height: 70vh; padding-top: var(--top); }
     <div class="dd">
       <figure class="yes"><div class="photo" style="aspect-ratio:3/2;position:relative;--r:-1deg"><img src="assets/img/xmas-jump.jpg" alt="" style="object-position:center 30%"><img src="assets/img/butterfly.webp" alt="" style="position:absolute;width:30%;height:auto;left:-8%;bottom:-12%;transform:rotate(-10deg)"></div><figcaption><b>Do</b>Overlap one doodle at a photo corner, at about 40% of its width.</figcaption></figure>
       <figure class="no"><div class="photo" style="aspect-ratio:3/2;position:relative;display:grid;place-items:center;background:var(--white);font-size:72px;letter-spacing:10px">🦋🌈☀️<svg class="xmark" viewBox="0 0 100 75" preserveAspectRatio="none" aria-hidden="true"><path d="M20 12 L80 63 M80 12 L20 63"/></svg></div><figcaption><b>Don't</b>Use emoji, icon sets or clip art in place of the drawings.</figcaption></figure>
-      <figure class="no"><div class="photo" style="aspect-ratio:3/2;position:relative;display:grid;place-items:center;background:var(--white)"><img src="assets/img/rainbow.webp" alt="" style="width:50%;height:auto;filter:hue-rotate(190deg) saturate(3)"><svg class="xmark" viewBox="0 0 100 75" preserveAspectRatio="none" aria-hidden="true"><path d="M20 12 L80 63 M80 12 L20 63"/></svg></div><figcaption><b>Don't</b>Recolour doodles outside blush, oat and ink.</figcaption></figure>
+      <figure class="no"><div class="photo" style="aspect-ratio:3/2;position:relative;display:grid;place-items:center;background:var(--white)"><img src="assets/img/rainbow.webp" alt="" style="width:50%;height:auto;filter:hue-rotate(190deg) saturate(3)"><svg class="xmark" viewBox="0 0 100 75" preserveAspectRatio="none" aria-hidden="true"><path d="M20 12 L80 63 M80 12 L20 63"/></svg></div><figcaption><b>Don't</b>Recolour doodles outside blush, oat and mocha.</figcaption></figure>
     </div>
   </section>
 </section>
@@ -1463,17 +1463,17 @@ main { min-height: 70vh; padding-top: var(--top); }
   addEventListener('scroll', nearest, { passive: true });
 
   /* Colour chips */
-  /* [name, hex, rgb, token, role, tilt, tag] — the brand palette: Pale Blush, our Elsie pink, first; then the palette sheet order */
+  /* [name, hex, rgb, token, role, tilt, tag] — the brand palette: Elsie Pink first; then the palette sheet order */
   var CHIPS = [
-    ['Pale Blush', '#E6BCC6', '230 188 198', 'pale-blush', 'Our signature pink: highlights, form focus and pink grounds. Write on it in cocoa (4.99:1), not ink.', -1, 'Our most used pink'],
-    ['Ink', '#796867', '121 104 103', 'ink', 'All text, headings, nav and outlines on paper and white.', -1],
+    ['Elsie Pink', '#E6BCC6', '230 188 198', 'elsie-pink', 'Our signature pink: highlights, form focus and pink grounds. Write on it in cocoa (4.99:1), not mocha.', -1, 'Our most used pink'],
+    ['Mocha', '#796867', '121 104 103', 'mocha', 'All text, headings, nav and outlines on paper and white.', -1],
     ['Taupe', '#D6CAC1', '214 202 193', 'taupe', 'File folders and quiet panels. Write on it in cocoa (5.28:1).', 1.5, 'Racer colour option'],
-    ['Lilac', '#E8D8E3', '232 216 227', 'lilac', 'A soft cool tint for backgrounds, cards and social grounds. Write on it in cocoa (6.2:1).', -1.5],
+    ['Parma Lilac', '#E8D8E3', '232 216 227', 'parma-lilac', 'A soft cool tint for backgrounds, cards and social grounds. Write on it in cocoa (6.2:1).', -1.5],
     ['Blush', '#EFBCC8', '239 188 200', 'blush', 'Hearts, stickers and the butterfly. Write on it in cocoa (5.12:1).', 2],
-    ['Paper Grey', '#F2F1EB', '242 241 235', 'paper-grey', 'Inside folders and recycled-paper sheets. Ink passes on it (4.65:1).', -1, 'Racer colour option'],
+    ['Paper Grey', '#F2F1EB', '242 241 235', 'paper-grey', 'Inside folders and recycled-paper sheets. Mocha passes on it (4.65:1).', -1, 'Racer colour option'],
     ['Oat', '#E6D5C0', '230 213 192', 'oat', 'Alternate folders and the "Who We’ve Helped" ground. Write on it in cocoa (5.91:1).', 1],
     ['Clay', '#D4A395', '212 163 149', 'clay', 'A warm accent for illustration, products and blocks of colour. Not for body text: cocoa on clay is only 3.82:1, so headings 24px and over only.', -2],
-    ['White', '#FFFFFF', '255 255 255', 'white', 'Polaroid frames, cards and notepaper. Ink on white is 5.26:1.', 1.5]
+    ['White', '#FFFFFF', '255 255 255', 'white', 'Polaroid frames, cards and notepaper. Mocha on white is 5.26:1.', 1.5]
   ];
   var WEB = [
     ['Cocoa', '#574A48', '87 74 72', 'cocoa', 'The footer, the newsletter envelope and text on every pink and tint.', 1],
@@ -1500,21 +1500,21 @@ main { min-height: 70vh; padding-top: var(--top); }
 
   /* Contrast pairings */
   var PAIRS = [
-    ['var(--white)', 'var(--ink)', 'Ink on white', '5.26', true],
-    ['var(--paper-grey)', 'var(--ink)', 'Ink on paper grey', '4.65', true],
+    ['var(--white)', 'var(--mocha)', 'Mocha on white', '5.26', true],
+    ['var(--paper-grey)', 'var(--mocha)', 'Mocha on paper grey', '4.65', true],
     ['var(--blush)', 'var(--ink-deep)', 'Cocoa on blush', '5.12', true],
     ['var(--oat)', 'var(--ink-deep)', 'Cocoa on oat', '5.91', true],
     ['var(--taupe)', 'var(--ink-deep)', 'Cocoa on taupe', '5.28', true],
-    ['var(--pale-blush)', 'var(--ink-deep)', 'Cocoa on pale blush', '4.99', true],
-    ['var(--lilac)', 'var(--ink-deep)', 'Cocoa on lilac', '6.20', true],
+    ['var(--elsie-pink)', 'var(--ink-deep)', 'Cocoa on Elsie pink', '4.99', true],
+    ['var(--parma-lilac)', 'var(--ink-deep)', 'Cocoa on Parma lilac', '6.20', true],
     ['var(--clay)', 'var(--ink-deep)', 'Cocoa on clay', '3.82', 'large'],
     ['var(--cocoa)', 'var(--white)', 'White on cocoa', '8.47', true],
     ['var(--cocoa)', 'var(--blush)', 'Blush on cocoa', '5.12', true],
     ['var(--dusk)', 'var(--white)', 'White on dusky pink', '5.42', true],
     ['var(--white)', 'var(--dusk)', 'Dusky pink text on white', '5.42', true],
-    ['var(--blush)', 'var(--ink)', 'Ink on blush', '3.18', false],
-    ['var(--taupe)', 'var(--ink)', 'Ink on taupe', '3.28', false],
-    ['var(--white)', 'var(--pale-blush)', 'Pale blush text on white', '1.70', false],
+    ['var(--blush)', 'var(--mocha)', 'Mocha on blush', '3.18', false],
+    ['var(--taupe)', 'var(--mocha)', 'Mocha on taupe', '3.28', false],
+    ['var(--white)', 'var(--elsie-pink)', 'Elsie pink text on white', '1.70', false],
     ['var(--cocoa)', 'var(--dusk)', 'Dusky pink on cocoa', '1.56', false]
   ];
   var pairs = document.getElementById('pairs');
